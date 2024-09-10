@@ -26,16 +26,27 @@ This repository provides a collection of **React Interview Questions** to help d
 
 ---
 
-## JSX
+### What is JSX, and how is it different from HTML?
 
-1. **What is JSX, and how is it different from HTML?**
+JSX (JavaScript XML) is a syntax extension for JavaScript used in React. It allows developers to write HTML-like code inside JavaScript and is primarily used to structure the UI in React applications. However, JSX is not valid HTML or JavaScript, so it must be transpiled into JavaScript using tools like Babel before the browser can process it.
 
-   JSX is a syntax extension for JavaScript that allows developers to write UI components that look like HTML. It must be transpiled into JavaScript before the browser can interpret it. JSX allows embedding JavaScript expressions inside `{}` and must follow XML-like syntax rules.
+**Key Differences**:
+- **JavaScript Logic**: JSX allows embedding JavaScript expressions inside curly braces `{}`. This means you can dynamically insert values or logic directly into the markup.
+- **Strict Syntax**: Unlike HTML, JSX enforces that all elements must be properly closed, including self-closing tags like `<img />` and `<br />`.
+- **Attribute Naming**: In JSX, attributes like `class` and `for` are written as `className` and `htmlFor` to avoid conflicts with JavaScript keywords.
 
-   **Key Differences:**
-   - Allows the use of JavaScript expressions directly in the markup.
-   - Requires closing tags for all elements, including self-closing ones like `<img />`.
-   - JSX is typically written in `.js` or `.jsx` files, while HTML is written separately.
+This is much more powerful than plain HTML because it allows you to combine UI with dynamic data directly.
+
+**Why Use JSX?**  
+JSX simplifies how we write UI components by allowing us to blend JavaScript and markup. This makes the code easier to read and maintain, especially when building complex, dynamic applications where UI needs to change based on data.
+
+**Example**:
+Let’s say we want to greet a user by name. With JSX, you can easily embed JavaScript logic inside the UI like this:
+
+```jsx
+const user = "Jane";
+return <h1>Welcome, {user}!</h1>; // Embeds JavaScript logic into JSX
+```
 
 ---
 

@@ -25,6 +25,7 @@ This repository provides a collection of **React Interview Questions** to help d
 18. [Alternatives to Redux](#alternatives-to-redux)
 
 ---
+## jsx
 
 ### What is JSX, and how is it different from HTML?
 

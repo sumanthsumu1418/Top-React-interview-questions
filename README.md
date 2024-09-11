@@ -107,17 +107,36 @@ function updateQuantity(index, newQuantity) {
 
 ## Props vs State
 
-4. **What are props and state in React? (props vs state)**
+4. ### What are props and state in React? (props vs state)
 
-   - **Props:** Passed from parent components to child components. They are immutable and used to pass data to components.
-   - **State:** Managed within the component itself, allowing it to change over time. It is mutable and typically updated using hooks like `useState`.
+**Props** and **state** are two key concepts in React that help manage data in components, but they serve different purposes.
 
-   | Props                          | State                          |
-   | ------------------------------ | ------------------------------ |
-   | Immutable                       | Mutable                        |
-   | Managed by Parent Component     | Managed by the Component        |
-   | Used for Passing Data           | Used for Local Data             |
-   | Triggers Re-render on Parent Update | Triggers Re-render on State Change |
+- **Props**: Short for properties, props are read-only inputs passed from a parent component to a child component. They are used to pass data and configuration down the component tree. Since props are immutable, the receiving component cannot modify them.
+- **State**: State is a local data structure managed within a component. It is mutable and can be changed based on user interactions or events within the component. Changes to the state will trigger a re-render of the component to reflect the updated state.
+
+| **Props**                                 | **State**                            |
+|-------------------------------------------|--------------------------------------|
+| Passed from parent to child component.    | Managed within the component itself. |
+| Immutable (cannot be modified).           | Mutable (can be updated).            |
+| Used for passing data and configuration.  | Used for managing component’s internal data. |
+| Controlled by parent component.           | Controlled by the component itself.  |
+| Does not trigger re-renders directly.     | Triggers re-renders when updated.    |
+
+**Example**:  
+Consider a counter component where `props` might pass an initial value, and `state` manages the current count:
+
+```jsx
+function Counter({ initialCount }) {  // Props: initialCount
+  const [count, setCount] = useState(initialCount);  // State: count
+  
+  return (
+    <div>
+      <p>Current count: {count}</p>
+      <button onClick={() => setCount(count + 1)}>Increment</button>
+    </div>
+  );
+}
+```
 
 ---
 

@@ -623,7 +623,47 @@ In summary, while React’s Virtual DOM is a powerful optimization technique, it
 
 14. **How does `useCallback` help with performance in React?**
 
-   `useCallback` memoizes a function to prevent it from being recreated on every render. This can avoid unnecessary re-renders in child components that receive the function as a prop.
+   ### How does `useCallback` help with performance in React?
+
+`useCallback` is a React hook that helps improve performance by **memoizing** functions. It prevents the unnecessary re-creation of functions during re-renders, which is especially important when passing callbacks to child components. By using `useCallback`, you ensure that the same function instance is passed unless its dependencies change, thus avoiding performance issues caused by unnecessary re-renders.
+
+#### Why is this important for performance?
+
+In React, every time a component re-renders, a new instance of any function inside the component is created. This can lead to performance issues if you pass these functions as props to child components, especially when those components are optimized with `React.memo`. When the reference of a function changes, even though the function's logic remains the same, the child component may unnecessarily re-render.
+
+`useCallback` helps by memoizing the function, so that the function reference only changes when one of its dependencies changes.
+
+#### Example:
+
+Here’s an example where `useCallback` is used to optimize a parent-child component interaction:
+
+```jsx
+import React, { useState, useCallback } from 'react';
+
+// Child component that only re-renders when its props change
+const Button = React.memo(({ handleClick }) => {
+  console.log('Button rendered');
+  return <button onClick={handleClick}>Click Me</button>;
+});
+
+function ParentComponent() {
+  const [count, setCount] = useState(0);
+
+  // useCallback to memoize the increment function
+  const increment = useCallback(() => {
+    setCount((prevCount) => prevCount + 1);
+  }, []);
+
+  return (
+    <div>
+      <h1>Count: {count}</h1>
+      <Button handleClick={increment} />
+    </div>
+  );
+}
+
+export default ParentComponent;
+```
 
 ---
 

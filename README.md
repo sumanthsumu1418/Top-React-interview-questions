@@ -716,8 +716,50 @@ function ItemList({ items, filterTerm }) {
 
 16. **How does Redux differ from React’s built-in state management using `useState`?**
 
-   - **Redux** is a centralized state management solution for global state.
-   - **useState** manages local component-specific state.
+   ### How does Redux differ from React’s built-in state management using `useState`?
+
+Both **Redux** and **React's built-in state management (`useState`)** are used to manage state in a React application, but they serve different purposes and are suited for different use cases.
+
+#### `useState` (React's Built-in State Management):
+- **Local State**: `useState` is used to manage local component-level state. Each component can have its own independent state, which is isolated from other components.
+- **Simple and Lightweight**: It’s the simplest way to manage state in React components, with no additional setup required. Ideal for managing state in individual components or small apps.
+- **Tightly Coupled**: The state managed by `useState` is tightly coupled to the component. Passing state between components requires **prop drilling** (passing props from parent to child).
+  
+#### Redux (Global State Management):
+- **Global State**: Redux manages **global state** that is shared across many components in an application. It provides a single source of truth for the entire app’s state, which is accessible from any component.
+- **Predictable State Changes**: Redux enforces a strict pattern where state changes happen through **actions** and **reducers**, making it easier to track and predict state changes, especially in large applications.
+- **Complex Setup**: Redux requires additional setup with actions, reducers, and a store, making it more complex than `useState`. However, this complexity is often justified in large-scale apps with complex state management needs.
+- **Scalability**: Redux is more suitable for applications where state needs to be shared across many components, and where you want to avoid prop drilling or complex state management logic.
+
+| **`useState`**                                  | **Redux**                                       |
+|-------------------------------------------------|-------------------------------------------------|
+| Manages local component state.                  | Manages global state across the entire app.      |
+| Easy to set up and use, great for simple state. | More complex setup, but great for large apps.    |
+| State is tightly coupled to individual components. | State is decoupled and stored globally in a centralized store. |
+| Changes directly via `setState`.                | State changes happen through actions and reducers. |
+| Prop drilling required to share state across components. | No prop drilling; components can access global state using `connect` or `useSelector`. |
+| Ideal for small to medium-sized applications.   | Ideal for large, complex applications.           |
+
+#### Example: Managing a Counter with `useState`
+
+In smaller applications, `useState` is perfect for managing simple, localized state, like a counter:
+
+```jsx
+import React, { useState } from 'react';
+
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <button onClick={() => setCount(count + 1)}>Increment</button>
+    </div>
+  );
+}
+
+export default Counter;
+```
 
 ---
 

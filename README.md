@@ -767,7 +767,29 @@ export default Counter;
 
 17. **What are side effects in React, and how do you handle them?**
 
-   Side effects are actions that interact with external systems (e.g., API calls, DOM manipulation). They are managed using the `useEffect` hook.
+   ### What are side effects in React, and how do you handle them?
+
+In React, **side effects** refer to any action that affects something outside the scope of the component, such as interacting with external APIs, updating the DOM directly, setting up subscriptions, or managing timers. Unlike rendering, which is a pure function (it always returns the same output for the same input), side effects can introduce unpredictability because they interact with external systems or the browser environment.
+
+#### Examples of Side Effects:
+- Fetching data from an API.
+- Setting up a subscription (e.g., WebSocket or real-time data feed).
+- Manually manipulating the DOM (e.g., changing the document title).
+- Setting up timers or intervals.
+
+#### How to Handle Side Effects in React:
+React provides the **`useEffect`** hook to handle side effects in functional components. The `useEffect` hook allows you to run side-effect code after the component renders, ensuring that side effects do not interfere with the rendering process.
+
+#### Basic Syntax of `useEffect`:
+```jsx
+useEffect(() => {
+  // Your side effect code here (e.g., fetching data or updating the DOM)
+
+  return () => {
+    // Cleanup function (optional), runs when the component unmounts or before the effect re-runs
+  };
+}, [dependencies]);  // Dependency array controls when the effect re-runs
+```
 
 ---
 

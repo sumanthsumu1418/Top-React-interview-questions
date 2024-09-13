@@ -670,9 +670,45 @@ export default ParentComponent;
 ## useMemo vs useCallback
 
 15. **When should you use `useMemo` vs `useCallback`?**
+### When should you use `useMemo` vs `useCallback`?
 
-   - Use `useMemo` to memoize values like expensive calculations.
-   - Use `useCallback` to memoize functions passed as props to child components.
+Both `useMemo` and `useCallback` are React hooks that help optimize performance by **memoizing** values and functions. They serve different purposes and should be used in specific scenarios.
+
+#### `useMemo`
+- **Purpose**: `useMemo` is used to **memoize the result of a computation**. It ensures that an expensive calculation is only re-computed when one of its dependencies changes. It is useful when you have costly operations (like filtering, sorting, or processing large datasets) that shouldn't run on every render.
+- **When to Use**: Use `useMemo` when you want to **memoize a computed value** to avoid recalculating it on every render. The value will only be recomputed if the dependencies change.
+
+#### `useCallback`
+- **Purpose**: `useCallback` is used to **memoize functions**. It prevents a function from being recreated on every render, which is useful when passing callbacks as props to child components, especially those optimized with `React.memo`. This ensures the child component only re-renders if the function actually changes.
+- **When to Use**: Use `useCallback` when you want to **memoize a function** to avoid unnecessary re-creation of the same function instance on every render.
+
+| **`useMemo`**                                  | **`useCallback`**                            |
+|------------------------------------------------|----------------------------------------------|
+| Memoizes the **result** of a function (value). | Memoizes the **function itself**.            |
+| Useful for optimizing expensive calculations.  | Useful for optimizing functions passed to child components (e.g., event handlers). |
+| Returns a **cached value**.                    | Returns a **cached function**.               |
+| Example: Memoizing filtered or sorted lists.   | Example: Memoizing a function passed to `React.memo` child. |
+
+#### Example of `useMemo`:
+Imagine you have a large list of items and you only want to display items based on a specific filter. Without `useMemo`, the filtering logic would run on every render, even if the input data hasn't changed.
+
+```jsx
+import { useMemo } from 'react';
+
+function ItemList({ items, filterTerm }) {
+  // useMemo to memoize the filtered items array
+  const filteredItems = useMemo(() => {
+    console.log('Filtering items...');
+    return items.filter(item => item.includes(filterTerm));
+  }, [items, filterTerm]); // Recompute only if items or filterTerm changes
+
+  return (
+    <ul>
+      {filteredItems.map(item => <li key={item}>{item}</li>)}
+    </ul>
+  );
+}
+```
 
 ---
 

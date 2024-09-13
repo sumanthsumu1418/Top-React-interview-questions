@@ -142,16 +142,51 @@ function Counter({ initialCount }) {  // Props: initialCount
 
 ## useState vs useEffect
 
-5. **Explain the difference between `useState` and `useEffect` in React.**
+5. ### Explain the difference between `useState` and `useEffect` in React.
 
-   - **useState:** A hook that allows you to add state to a functional component. It returns an array with the current state and a function to update that state.
-   - **useEffect:** A hook used for side effects like data fetching, subscriptions, or manually updating the DOM. It runs after the render and can run based on dependency changes.
+In React, `useState` and `useEffect` are two of the most commonly used hooks that help manage component behavior, but they serve very different purposes.
 
-   | useState                         | useEffect                       |
-   | --------------------------------- | ------------------------------- |
-   | Used to create state              | Used to handle side effects      |
-   | Triggers a re-render on state update | Runs after every render unless controlled by a dependency array |
-   | No dependencies                   | Can depend on state or props     |
+#### `useState`
+- **Purpose**: `useState` is used to manage local state within a functional component. It allows you to declare a state variable and provides a function to update it. When the state changes, React re-renders the component to reflect the new state.
+- **When to Use**: Use `useState` whenever you need to keep track of information that will change over time, like form inputs, counters, or toggle switches.
+
+#### `useEffect`
+- **Purpose**: `useEffect` is used for side effects. A "side effect" refers to anything that affects something outside of the component's rendering process (e.g., fetching data from an API, subscribing to services, setting up timers, or directly manipulating the DOM). By default, `useEffect` runs after every render, but you can control when it runs using a dependency array.
+- **When to Use**: Use `useEffect` whenever you need to perform an action after the component renders or re-renders (e.g., data fetching, DOM updates, or subscribing to events).
+
+| **`useState`**                              | **`useEffect`**                              |
+|---------------------------------------------|----------------------------------------------|
+| Used to manage local state in a component.  | Used to manage side effects in a component.  |
+| Triggers a re-render when the state changes.| Runs after every render (or re-render), based on dependencies. |
+| Stores data that belongs to the component.  | Handles external interactions like data fetching or subscriptions. |
+| Example: managing form inputs, toggles.     | Example: fetching data when the component mounts. |
+
+**Example: `useState` vs `useEffect`**  
+Let’s build a simple counter component that updates the document title with the count value using both `useState` and `useEffect`.
+
+```jsx
+import { useState, useEffect } from 'react';
+
+function Counter() {
+  const [count, setCount] = useState(0); // useState to track count
+
+  // useEffect to update the document title whenever the count changes
+  useEffect(() => {
+    document.title = `Count: ${count}`;
+  }, [count]);  // Dependency array ensures effect runs when `count` changes
+
+  return (
+    <div>
+      <p>You clicked {count} times</p>
+      <button onClick={() => setCount(count + 1)}>Increment</button>
+    </div>
+  );
+}
+```
+In this example:
+
+* useState is used to track the count.
+* useEffect is used to update the document title whenever the count changes.
 
 ---
 

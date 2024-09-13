@@ -404,12 +404,55 @@ store.dispatch(fetchUser());
 ## Class Components vs Functional Components
 
 10. **What is the difference between class components and functional components in React?**
+### What is the difference between class components and functional components in React?
 
-   | Class Components                 | Functional Components           |
-   | --------------------------------- | ------------------------------- |
-   | Uses `this` to access state/props | Uses hooks like `useState`       |
-   | Requires more boilerplate         | Simpler, less code               |
-   | Lifecycle methods for side effects | Hooks like `useEffect` handle side effects |
+In React, components can be written as either **class components** or **functional components**. Both are used to build the UI, but they differ in syntax, features, and how they handle state and lifecycle methods.
+
+#### Class Components:
+- **Syntax**: Class components are written using the `class` keyword, and they extend `React.Component`.
+- **State Management**: Class components have their own state and manage it using `this.state` and `this.setState()`.
+- **Lifecycle Methods**: Class components have access to lifecycle methods like `componentDidMount`, `componentDidUpdate`, and `componentWillUnmount`.
+- **`this` keyword**: Class components use `this` to refer to the component instance, which can sometimes lead to issues with binding methods.
+
+#### Functional Components:
+- **Syntax**: Functional components are plain JavaScript functions that return JSX. They are simpler and more concise.
+- **Hooks for State and Side Effects**: Functional components use hooks like `useState` and `useEffect` to manage state and side effects, respectively.
+- **No `this` keyword**: Functional components don't use the `this` keyword, which simplifies the code and avoids issues with method binding.
+- **Stateless vs. Stateful**: Originally, functional components were stateless, but since the introduction of hooks in React 16.8, functional components can now manage state and perform side effects just like class components.
+
+| **Class Components**                      | **Functional Components**                         |
+|-------------------------------------------|--------------------------------------------------|
+| Use the `class` syntax to define a component. | Use plain JavaScript functions to define a component. |
+| Manage state with `this.state` and `this.setState()`. | Manage state with the `useState` hook.            |
+| Have access to lifecycle methods.         | Use hooks like `useEffect` to handle side effects. |
+| Require the use of the `this` keyword.    | No `this` keyword is needed.                      |
+| More verbose and require more boilerplate.| Simpler and more concise, especially with hooks.  |
+
+#### Example of Class Component:
+
+```jsx
+import React, { Component } from 'react';
+
+class Counter extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { count: 0 };
+  }
+
+  increment = () => {
+    this.setState({ count: this.state.count + 1 });
+  };
+
+  render() {
+    return (
+      <div>
+        <p>Count: {this.state.count}</p>
+        <button onClick={this.increment}>Increment</button>
+      </div>
+    );
+  }
+}
+```
 
 ---
 

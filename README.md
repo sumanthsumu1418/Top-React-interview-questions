@@ -459,8 +459,53 @@ class Counter extends Component {
 ## Hooks in React
 
 11. **Can you explain how hooks work in React?**
+### Example of React Functional Component with Hooks
 
-   Hooks are functions that allow you to use React’s state and lifecycle features inside functional components. Common hooks include `useState`, `useEffect`, and `useContext`.
+This component demonstrates the use of two of the most important hooks in React: **`useState`** and **`useEffect`**. It is designed to show how hooks simplify state management and side effects, while making your code more concise and readable. This example can be an attractive talking point during an interview as it shows proficiency with modern React practices.
+
+#### Key Features:
+- **Dynamic State Management**: The component uses `useState` to track the number of button clicks.
+- **Side Effects with `useEffect`**: It also leverages `useEffect` to update the document's title whenever the count changes, demonstrating how to handle side effects in functional components.
+- **Clean and Concise**: The code avoids complexity, using a simple and elegant structure without the need for class components or lifecycle methods.
+
+#### Full Code:
+
+```jsx
+import React, { useState, useEffect } from 'react';
+
+function ClickCounter() {
+  // useState hook to manage the count state
+  const [count, setCount] = useState(0);
+
+  // useEffect hook to update document title based on count
+  useEffect(() => {
+    document.title = `You clicked ${count} times`;
+  }, [count]); // The effect runs whenever 'count' changes
+
+  return (
+    <div style={{ textAlign: 'center', marginTop: '50px' }}>
+      <h1>React Click Counter</h1>
+      <p style={{ fontSize: '20px' }}>You clicked the button {count} times</p>
+      <button
+        style={{
+          padding: '10px 20px',
+          fontSize: '16px',
+          backgroundColor: '#007BFF',
+          color: '#FFF',
+          border: 'none',
+          borderRadius: '5px',
+          cursor: 'pointer',
+        }}
+        onClick={() => setCount(count + 1)}
+      >
+        Click Me
+      </button>
+    </div>
+  );
+}
+
+export default ClickCounter;
+```
 
  ---
 

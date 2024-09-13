@@ -10,7 +10,7 @@ This repository provides a collection of **React Interview Questions** to help d
 3. [Reconciliation in React](#reconciliation-in-react)
 4. [Props vs State](#props-vs-state)
 5. [useState vs useEffect](#usestate-vs-useeffect)
-6. [Higher-Order Components (HOC)](#higher-order-components-hoc)
+6. [Higher-Order Components (HOC)](#Higher)
 7. [useCallback vs useMemo](#usecallback-vs-usememo)
 8. [Redux](#redux)
 9. [Redux Thunk](#redux-thunk)
@@ -194,11 +194,46 @@ In this example:
 
 6. **What is a Higher-Order Component (HOC) in React?**
 
-   A Higher-Order Component (HOC) is a function that takes a component as an argument and returns a new component. It is used to reuse logic across multiple components without modifying them directly.
+   ### Higher-Order Components (HOC)
 
-   **Key Points:**
-   - HOCs do not modify the original component; they wrap it.
-   - Commonly used for concerns like authentication, analytics, or state management.
+A **Higher-Order Component (HOC)** is a function in React that takes a component and returns a new component with additional props or behavior. HOCs are used to reuse logic across multiple components without modifying the components themselves. Instead, they "wrap" the original component and add functionality.
+
+HOCs follow the concept of higher-order functions in JavaScript, where functions take other functions as arguments or return them.
+
+#### Why Use HOCs?
+HOCs allow you to share logic across components without duplicating code. Common use cases include:
+- **Adding Authentication**: Wrapping components to check if a user is authenticated before rendering.
+- **Logging**: Wrapping components to log certain events or props.
+- **Data Fetching**: Fetching data and passing it down as props to the wrapped component.
+
+#### Example of HOC:
+
+Let’s create a simple HOC that adds authentication logic to any component. If the user is not authenticated, it redirects them to the login page.
+
+```jsx
+import React from 'react';
+import { Redirect } from 'react-router-dom';
+
+// Higher-Order Component that adds authentication
+const withAuth = (WrappedComponent) => {
+  return (props) => {
+    const isAuthenticated = props.isAuthenticated; // Assume this is passed as a prop
+    
+    if (!isAuthenticated) {
+      return <Redirect to="/login" />;
+    }
+    
+    return <WrappedComponent {...props} />;
+  };
+};
+
+// Usage example: Wrap any component with `withAuth`
+const Dashboard = (props) => {
+  return <h1>Welcome to the Dashboard!</h1>;
+};
+
+export default withAuth(Dashboard); // Dashboard now requires authentication
+```
 
 ---
 

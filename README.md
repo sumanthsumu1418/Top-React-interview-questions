@@ -10,7 +10,7 @@ This repository provides a collection of **React Interview Questions** to help d
 3. [Reconciliation in React](#reconciliation-in-react)
 4. [Props vs State](#props-vs-state)
 5. [useState vs useEffect](#usestate-vs-useeffect)
-6. [Higher-Order Components (HOC)](#Higher)
+6. [Higher-Order Components (HOC)](#Higher-Order)
 7. [useCallback vs useMemo](#usecallback-vs-usememo)
 8. [Redux](#redux)
 9. [Redux Thunk](#redux-thunk)
@@ -240,14 +240,42 @@ export default withAuth(Dashboard); // Dashboard now requires authentication
 ## useCallback vs useMemo
 
 7. **What is the difference between `useCallback` and `useMemo`?**
+### `useCallback` vs `useMemo`
 
-   - **useCallback:** Returns a memoized function. It is used when you want to pass a stable function reference to child components to prevent unnecessary re-renders.
-   - **useMemo:** Returns a memoized value. It is used to cache expensive calculations so they don’t re-run on every render.
+In React, `useCallback` and `useMemo` are hooks that optimize the performance of your components by memoizing values and functions. They both help to prevent unnecessary re-renders or recalculations, but they are used in different scenarios.
 
-   | useCallback                      | useMemo                         |
-   | --------------------------------- | ------------------------------- |
-   | Memoizes a function               | Memoizes a value                |
-   | Prevents re-renders of child components | Avoids running expensive calculations |
+#### `useCallback`
+- **Purpose**: `useCallback` is used to memoize functions, preventing their re-creation on every render. This is useful when you want to pass stable function references to child components to avoid unnecessary re-renders.
+- **When to Use**: Use `useCallback` when passing callbacks as props to child components, especially if those components are wrapped in `React.memo()` (which prevents re-renders if props don’t change).
+
+#### `useMemo`
+- **Purpose**: `useMemo` is used to memoize the return value of a function. It helps avoid expensive calculations or object recreations unless the dependencies change.
+- **When to Use**: Use `useMemo` when you have a computationally expensive function or calculation that shouldn’t re-run unless its dependencies change.
+
+| **`useCallback`**                         | **`useMemo`**                            |
+|-------------------------------------------|------------------------------------------|
+| Memoizes functions.                       | Memoizes the result of a function (values).|
+| Returns a memoized version of the callback function that only changes if dependencies change. | Returns the memoized value of a computation that only re-runs if dependencies change. |
+| Useful for optimizing when passing callbacks to child components. | Useful for optimizing expensive calculations. |
+
+#### Example of `useCallback`:
+Let’s say you have a parent component that passes a function as a prop to a child component. Without `useCallback`, the function would be recreated on every render, causing unnecessary re-renders of the child.
+
+```jsx
+import { useState, useCallback } from 'react';
+import ChildComponent from './ChildComponent';
+
+function ParentComponent() {
+  const [count, setCount] = useState(0);
+
+  // useCallback to prevent function recreation on every render
+  const increment = useCallback(() => {
+    setCount(count + 1);
+  }, [count]);
+
+  return <ChildComponent increment={increment} />;
+}
+```
 
 ---
 

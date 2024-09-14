@@ -23,6 +23,17 @@ This repository provides a collection of **React Interview Questions** to help d
 17. [Redux vs useState](#redux-vs-usestate)
 18. [Side Effects in React](#side-effects-in-react)
 19. [Alternatives to Redux](#alternatives-to-redux)
+20. [Controlled vs Uncontrolled Components](#controlled-vs-uncontrolled-components)
+21. [Context API vs Redux](#context-api-vs-redux)
+22. [What is Prop Drilling?](#what-is-prop-drilling)
+24. [Pure Component vs Regular Component](#pure-component-vs-regular-component)
+25. [useReducer vs useState](#usereducer-vs-usestate)
+26. [React Fragments](#react-fragments)
+27. [Reconciliation Without Keys](#reconciliation-without-keys)
+28. [Lazy Loading and Code Splitting](#lazy-loading-and-code-splitting)
+29. [What is an Error Boundary?](#what-is-an-error-boundary)
+30. [Explain Redux](#explain-redux)
+31. [Performance Optimization in React](#performance-optimization-in-react)
 
 ---
 ## jsx
@@ -870,3 +881,38 @@ The **Context API** is a built-in feature in React for sharing state globally wi
 
 ### Conclusion:
 While Redux is powerful and widely used, it can be overkill for smaller or simpler projects. Alternatives like **React’s Context API**, **MobX**, **Recoil**, **Zustand**, and **React Query** offer simpler and more lightweight solutions for state management, depending on the size and complexity of your application. Choosing the right tool depends on your specific project needs.
+
+---
+
+### 1. Controlled vs Uncontrolled Components
+[Back to top](#table-of-contents)
+
+### 2. Context API vs Redux
+[Back to top](#table-of-contents)
+
+### 3. What is Prop Drilling?
+[Back to top](#table-of-contents)
+
+### 4. Pure Component vs Regular Component
+[Back to top](#table-of-contents)
+
+### 5. useReducer vs useState
+[Back to top](#table-of-contents)
+
+### 6. React Fragments
+[Back to top](#table-of-contents)
+
+### 7. Reconciliation Without Keys
+[Back to top](#table-of-contents)
+
+### 8. Lazy Loading and Code Splitting
+[Back to top](#table-of-contents)
+
+### 9. What is an Error Boundary?
+[Back to top](#table-of-contents)
+
+### 10. Explain Redux
+[Back to top](#table-of-contents)
+
+### 11. Performance Optimization in React
+[Back to top](#table-of-contents)

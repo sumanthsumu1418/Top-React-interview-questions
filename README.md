@@ -795,9 +795,44 @@ useEffect(() => {
 
 ## Alternatives to Redux
 
-18. **What are the alternatives to Redux for state management in React?**
+18. ### What are the alternatives to Redux for state management in React?
 
-   - **Context API**: Simplifies global state management without Redux’s complexity.
-   - **MobX**: A more declarative way to manage state.
-   - **Recoil**: A modern state management library for fine-grained control.
+While **Redux** is a powerful state management tool, it's not always necessary, especially in smaller or less complex applications. There are several alternatives to Redux for managing state in React applications, each with its own strengths and use cases.
+
+#### 1. **React's Context API**
+The **Context API** is a built-in React feature that allows you to manage global state without needing an external library like Redux. It lets you share state across multiple components without passing props down through each level (also known as **prop drilling**). It’s lightweight, easy to use, and a great option for small to medium-sized applications.
+
+**When to use it**:  
+- Ideal for small applications where you need to share state across multiple components.
+- Great for replacing prop drilling in deeply nested components.
+
+**Example**:
+```jsx
+import React, { createContext, useState, useContext } from 'react';
+
+// Create a context
+const ThemeContext = createContext();
+
+// Create a provider component
+function ThemeProvider({ children }) {
+  const [theme, setTheme] = useState('light');
+  return (
+    <ThemeContext.Provider value={{ theme, setTheme }}>
+      {children}
+    </ThemeContext.Provider>
+  );
+}
+
+// Accessing context in a child component
+function ThemedButton() {
+  const { theme, setTheme } = useContext(ThemeContext);
+  return (
+    <button onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}>
+      Switch to {theme === 'light' ? 'dark' : 'light'} mode
+    </button>
+  );
+}
+
+export { ThemeProvider, ThemedButton };
+```
 

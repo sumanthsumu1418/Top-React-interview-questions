@@ -86,7 +86,7 @@ function updateItem(index, newItem) {
   return updatedItems;
 }
 ```
-
+[Back to top](#table-of-contents)
 ---
 ## Reconciliation in React
 
@@ -114,6 +114,7 @@ function updateQuantity(index, newQuantity) {
   return updatedCart;
 }
 ```
+[Back to top](#table-of-contents)
 
 ---
 
@@ -149,6 +150,7 @@ function Counter({ initialCount }) {  // Props: initialCount
   );
 }
 ```
+[Back to top](#table-of-contents)
 
 ---
 
@@ -200,6 +202,8 @@ In this example:
 * useState is used to track the count.
 * useEffect is used to update the document title whenever the count changes.
 
+[Back to top](#table-of-contents)
+
 ---
 
 ## Higher-Order Components (HOC)
@@ -246,6 +250,7 @@ const Dashboard = (props) => {
 
 export default withAuth(Dashboard); // Dashboard now requires authentication
 ```
+[Back to top](#table-of-contents)
 
 ---
 
@@ -288,7 +293,7 @@ function ParentComponent() {
   return <ChildComponent increment={increment} />;
 }
 ```
-
+[Back to top](#table-of-contents)
 ---
 
 ## Redux
@@ -343,7 +348,7 @@ const store = createStore(counterReducer);
 store.dispatch(increment());
 console.log(store.getState());  // Output: 1
 ```
-
+[Back to top](#table-of-contents)
 ---
 
 ## Redux Thunk
@@ -410,7 +415,7 @@ const store = createStore(userReducer, applyMiddleware(thunk));
 // Dispatching the async action
 store.dispatch(fetchUser());
 ```
-
+[Back to top](#table-of-contents)
 ---
 
 ## Class Components vs Functional Components
@@ -465,7 +470,7 @@ class Counter extends Component {
   }
 }
 ```
-
+[Back to top](#table-of-contents)
 ---
 
 ## Hooks in React
@@ -518,7 +523,7 @@ function ClickCounter() {
 
 export default ClickCounter;
 ```
-
+[Back to top](#table-of-contents)
  ---
 
 ## useEffect vs Lifecycle Methods
@@ -577,7 +582,7 @@ function UserProfile() {
   );
 }
 ```
-
+[Back to top](#table-of-contents)
 ---
 
 ## Limitations of the Virtual DOM
@@ -629,6 +634,7 @@ The **Virtual DOM** is one of the key concepts that makes React performant and e
 
 In summary, while React’s Virtual DOM is a powerful optimization technique, it isn’t perfect. In highly complex or real-time applications, performance can still degrade if the Virtual DOM is overused or mismanaged. Proper optimization techniques, such as memoization and efficient state management, are essential to mitigating these limitations.
 
+[Back to top](#table-of-contents)
 ---
 
 ## useCallback and Performance
@@ -676,7 +682,7 @@ function ParentComponent() {
 
 export default ParentComponent;
 ```
-
+[Back to top](#table-of-contents)
 ---
 
 ## useMemo vs useCallback
@@ -721,7 +727,7 @@ function ItemList({ items, filterTerm }) {
   );
 }
 ```
-
+[Back to top](#table-of-contents)
 ---
 
 ## Redux vs useState
@@ -772,7 +778,7 @@ function Counter() {
 
 export default Counter;
 ```
-
+[Back to top](#table-of-contents)
 ---
 
 ## Side Effects in React
@@ -802,7 +808,7 @@ useEffect(() => {
   };
 }, [dependencies]);  // Dependency array controls when the effect re-runs
 ```
-
+[Back to top](#table-of-contents)
 ---
 
 ## Alternatives to Redux

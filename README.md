@@ -890,11 +890,25 @@ The **Context API** is a built-in feature in React for sharing state globally wi
 While Redux is powerful and widely used, it can be overkill for smaller or simpler projects. Alternatives like **React’s Context API**, **MobX**, **Recoil**, **Zustand**, and **React Query** offer simpler and more lightweight solutions for state management, depending on the size and complexity of your application. Choosing the right tool depends on your specific project needs.
 
 [Back to top](#table-of-contents)
+
 ---
 ## Controlled vs Uncontrolled Components
 
-### 20. Controlled vs Uncontrolled Components
+In React, form elements like `<input>`, `<textarea>`, and `<select>` can either be **controlled** or **uncontrolled** components depending on how their state is managed.
+
+#### Controlled Components:
+- A **controlled component** is a form element where the value is controlled by the React state. The input field's value is set by the component's state, and changes are handled through event handlers like `onChange`.
+- This gives you full control over the input, making it easy to validate or modify the data.
+
+#### Uncontrolled Components:
+- An **uncontrolled component** is one where the form data is handled by the DOM itself. Instead of using React state to control the input value, you use **refs** to directly access the DOM element's value.
+- These are closer to traditional HTML form elements.
+
 [Back to top](#table-of-contents)
+
+---
+
+
 
 ### 21. Context API vs Redux
 [Back to top](#table-of-contents)

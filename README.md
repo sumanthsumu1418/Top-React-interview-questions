@@ -59,6 +59,7 @@ Let’s say we want to greet a user by name. With JSX, you can easily embed Java
 const user = "Jane";
 return <h1>Welcome, {user}!</h1>; // Embeds JavaScript logic into JSX
 ```
+[Back to top](#table-of-contents)
 
 ---
 

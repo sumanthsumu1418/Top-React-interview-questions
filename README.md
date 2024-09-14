@@ -892,7 +892,7 @@ While Redux is powerful and widely used, it can be overkill for smaller or simpl
 [Back to top](#table-of-contents)
 
 ---
-### 19. Controlled vs Uncontrolled Components
+### Controlled vs Uncontrolled Components
 
 In React, **controlled components** and **uncontrolled components** are two different ways of handling form inputs.
 

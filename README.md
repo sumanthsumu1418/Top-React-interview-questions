@@ -882,6 +882,7 @@ The **Context API** is a built-in feature in React for sharing state globally wi
 ### Conclusion:
 While Redux is powerful and widely used, it can be overkill for smaller or simpler projects. Alternatives like **React’s Context API**, **MobX**, **Recoil**, **Zustand**, and **React Query** offer simpler and more lightweight solutions for state management, depending on the size and complexity of your application. Choosing the right tool depends on your specific project needs.
 
+[Back to top](#table-of-contents)
 ---
 ## Controlled vs Uncontrolled Components
 

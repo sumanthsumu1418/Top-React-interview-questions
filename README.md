@@ -883,36 +883,37 @@ The **Context API** is a built-in feature in React for sharing state globally wi
 While Redux is powerful and widely used, it can be overkill for smaller or simpler projects. Alternatives like **React’s Context API**, **MobX**, **Recoil**, **Zustand**, and **React Query** offer simpler and more lightweight solutions for state management, depending on the size and complexity of your application. Choosing the right tool depends on your specific project needs.
 
 ---
+##Controlled vs Uncontrolled Components
 
-### 1. Controlled vs Uncontrolled Components
+### 20. Controlled vs Uncontrolled Components
 [Back to top](#table-of-contents)
 
-### 2. Context API vs Redux
+### 21. Context API vs Redux
 [Back to top](#table-of-contents)
 
-### 3. What is Prop Drilling?
+### 22. What is Prop Drilling?
 [Back to top](#table-of-contents)
 
-### 4. Pure Component vs Regular Component
+### 23. Pure Component vs Regular Component
 [Back to top](#table-of-contents)
 
-### 5. useReducer vs useState
+### 24. useReducer vs useState
 [Back to top](#table-of-contents)
 
-### 6. React Fragments
+### 25. React Fragments
 [Back to top](#table-of-contents)
 
-### 7. Reconciliation Without Keys
+### 26. Reconciliation Without Keys
 [Back to top](#table-of-contents)
 
-### 8. Lazy Loading and Code Splitting
+### 27. Lazy Loading and Code Splitting
 [Back to top](#table-of-contents)
 
-### 9. What is an Error Boundary?
+### 28. What is an Error Boundary?
 [Back to top](#table-of-contents)
 
-### 10. Explain Redux
+### 29. Explain Redux
 [Back to top](#table-of-contents)
 
-### 11. Performance Optimization in React
+### 30. Performance Optimization in React
 [Back to top](#table-of-contents)

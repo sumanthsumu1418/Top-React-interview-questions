@@ -914,10 +914,37 @@ In React, **controlled components** and **uncontrolled components** are two diff
 
 ---
 
-
-
 ### 21. Context API vs Redux
+
+Both the **Context API** and **Redux** are tools used for managing global state in React applications. However, they serve different purposes and are used in different scenarios depending on the complexity and scalability needs of the application.
+
+- **Context API**: The Context API is built into React and allows you to share state across components without passing props down manually at every level (also known as **prop drilling**). It's a simple solution for state management in small to medium-sized applications and works best for less complex state structures.
+
+- **Redux**: Redux is an external library used for managing the global state of large-scale applications. It follows a predictable state container pattern where state is managed through actions and reducers, ensuring state changes are trackable and more manageable as the application grows.
+
+**Key Differences**:
+
+| **Context API**                                 | **Redux**                                     |
+|-------------------------------------------------|-----------------------------------------------|
+| Built into React, no external libraries needed. | Requires an external library (redux).         |
+| Suitable for small to medium-sized applications.| Suitable for large, complex applications.     |
+| Easy to implement with minimal boilerplate.     | More setup and boilerplate required (actions, reducers, store). |
+| State changes are less predictable and not strictly managed. | State changes are predictable and traceable via actions. |
+| Great for avoiding prop drilling.               | Best for managing large global state with many state dependencies. |
+
+**When to Use Context API**:
+- When you need to manage a small amount of global state.
+- To avoid **prop drilling** in applications with deeply nested components.
+- When minimal setup and simplicity are prioritized.
+
+**When to Use Redux**:
+- When you have a large application with complex state logic.
+- When you need more predictable and traceable state management with actions and reducers.
+- When debugging and time-travel debugging are needed for state changes.
+
 [Back to top](#table-of-contents)
+
+---
 
 ### 22. What is Prop Drilling?
 [Back to top](#table-of-contents)

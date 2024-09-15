@@ -913,6 +913,7 @@ In React, **controlled components** and **uncontrolled components** are two diff
 
 
 ---
+## Context API vs Redux
 
 ### 20. Context API vs Redux
 

@@ -914,7 +914,7 @@ In React, **controlled components** and **uncontrolled components** are two diff
 
 ---
 
-### 21. Context API vs Redux
+### 20. Context API vs Redux
 
 Both the **Context API** and **Redux** are tools used for managing global state in React applications. However, they serve different purposes and are used in different scenarios depending on the complexity and scalability needs of the application.
 

@@ -946,6 +946,7 @@ Both the **Context API** and **Redux** are tools used for managing global state 
 [Back to top](#table-of-contents)
 
 ---
+###  What is Prop Drilling?
 
 ### 21. What is Prop Drilling?
 

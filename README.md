@@ -1024,23 +1024,99 @@ export default RegularComponent;
 [Back to top](#table-of-contents)
 ===
 
-### 24. useReducer vs useState
+### 23. useReducer vs useState
+### 5. useReducer vs useState
+
+In React, both **`useReducer`** and **`useState`** are hooks used to manage state, but they serve different purposes and are suited for different use cases. 
+
+- **`useState`**: The `useState` hook is simpler and ideal for managing local state in functional components. It's most commonly used when you have a small number of state variables or when the state transitions are straightforward.
+
+- **`useReducer`**: The `useReducer` hook is more powerful and is typically used when you have **more complex state logic** or when the state is an object with multiple sub-values. It works similarly to Redux by using a **reducer function** to manage state updates, which makes it ideal for handling state with complex transitions.
+
+#### Key Differences:
+
+| **useState**                                   | **useReducer**                                |
+|------------------------------------------------|-----------------------------------------------|
+| Simpler to use for managing local state.       | Better for managing complex state transitions.|
+| State updates are made directly using `setState`. | State updates are made using a reducer function that takes the current state and an action. |
+| Ideal for simple use cases (e.g., form inputs, toggles). | Ideal when state depends on multiple actions or involves complex logic. |
+| Returns an array: `[state, setState]`.         | Returns an array: `[state, dispatch]`.        |
+| Easier for managing independent state variables. | More structured, especially when managing related state variables. |
+
+#### Example of `useState`:
+
+```jsx
+import React, { useState } from 'react';
+
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <button onClick={() => setCount(count + 1)}>Increment</button>
+    </div>
+  );
+}
+```
+
+#### Example of `useReducer`:
+
+Here’s an example of using `useReducer` to manage a counter with multiple actions:
+
+```jsx
+import React, { useReducer } from 'react';
+
+// Define the initial state
+const initialState = { count: 0 };
+
+// Define the reducer function to handle actions
+function reducer(state, action) {
+  switch (action.type) {
+    case 'increment':
+      return { count: state.count + 1 };
+    case 'decrement':
+      return { count: state.count - 1 };
+    case 'reset':
+      return { count: 0 };
+    default:
+      throw new Error();
+  }
+}
+function Counter() {
+  // Use useReducer with the reducer function and initial state
+  const [state, dispatch] = useReducer(reducer, initialState);
+
+  return (
+    <div>
+      <p>Count: {state.count}</p>
+      <button onClick={() => dispatch({ type: 'increment' })}>Increment</button>
+      <button onClick={() => dispatch({ type: 'decrement' })}>Decrement</button>
+      <button onClick={() => dispatch({ type: 'reset' })}>Reset</button>
+    </div>
+  );
+}
+
+export default Counter;
+
+```
+
 [Back to top](#table-of-contents)
 
-### 25. React Fragments
+### 24. React Fragments
 [Back to top](#table-of-contents)
 
-### 26. Reconciliation Without Keys
+### 25. Reconciliation Without Keys
 [Back to top](#table-of-contents)
 
-### 27. Lazy Loading and Code Splitting
+### 26. Lazy Loading and Code Splitting
 [Back to top](#table-of-contents)
 
-### 28. What is an Error Boundary?
+### 27. What is an Error Boundary?
 [Back to top](#table-of-contents)
 
-### 29. Explain Redux
+### 28. Explain Redux
 [Back to top](#table-of-contents)
 
-### 30. Performance Optimization in React
+### 29. Performance Optimization in React
 [Back to top](#table-of-contents)

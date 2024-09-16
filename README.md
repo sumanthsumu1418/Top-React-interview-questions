@@ -294,6 +294,7 @@ function ParentComponent() {
 }
 ```
 [Back to top](#table-of-contents)
+
 ---
 
 ## Redux
@@ -349,6 +350,7 @@ store.dispatch(increment());
 console.log(store.getState());  // Output: 1
 ```
 [Back to top](#table-of-contents)
+
 ---
 
 ## Redux Thunk
@@ -416,6 +418,7 @@ const store = createStore(userReducer, applyMiddleware(thunk));
 store.dispatch(fetchUser());
 ```
 [Back to top](#table-of-contents)
+
 ---
 
 ## Class Components vs Functional Components
@@ -471,6 +474,7 @@ class Counter extends Component {
 }
 ```
 [Back to top](#table-of-contents)
+
 ---
 
 ## Hooks in React
@@ -524,6 +528,7 @@ function ClickCounter() {
 export default ClickCounter;
 ```
 [Back to top](#table-of-contents)
+
  ---
 
 ## useEffect vs Lifecycle Methods
@@ -583,6 +588,7 @@ function UserProfile() {
 }
 ```
 [Back to top](#table-of-contents)
+
 ---
 
 ## Limitations of the Virtual DOM
@@ -683,6 +689,7 @@ function ParentComponent() {
 export default ParentComponent;
 ```
 [Back to top](#table-of-contents)
+
 ---
 
 ## useMemo vs useCallback
@@ -728,6 +735,7 @@ function ItemList({ items, filterTerm }) {
 }
 ```
 [Back to top](#table-of-contents)
+
 ---
 
 ## Redux vs useState
@@ -779,6 +787,7 @@ function Counter() {
 export default Counter;
 ```
 [Back to top](#table-of-contents)
+
 ---
 
 ## Side Effects in React
@@ -809,6 +818,7 @@ useEffect(() => {
 }, [dependencies]);  // Dependency array controls when the effect re-runs
 ```
 [Back to top](#table-of-contents)
+
 ---
 
 ## Alternatives to Redux
@@ -970,6 +980,7 @@ function Child({ user }) {
 ```
 
 [Back to top](#table-of-contents)
+
 ---
 
 ### Pure Component vs Regular Component
@@ -1022,6 +1033,7 @@ export default RegularComponent;
 ```
 
 [Back to top](#table-of-contents)
+
 ===
 
 ### useReducer vs useState
@@ -1100,8 +1112,8 @@ function Counter() {
 export default Counter;
 
 ```
-
 [Back to top](#table-of-contents)
+
 ---
 
 ### React Fragments
@@ -1131,6 +1143,7 @@ function FragmentExample() {
 export default FragmentExample;
 ```
 [Back to top](#table-of-contents)
+
 ---
 
 ###  Reconciliation Without Keys
@@ -1162,6 +1175,7 @@ function ItemList({ items }) {
 }
 ```
 [Back to top](#table-of-contents)
+
 ---
 
 ### Lazy Loading and Code Splitting
@@ -1236,8 +1250,8 @@ function App() {
 
 export default App;
 ```
-
 [Back to top](#table-of-contents)
+
 ---
 
 ###  What is an Error Boundary?
@@ -1311,6 +1325,7 @@ class ErrorBoundary extends Component {
 export default ErrorBoundary;
 ```
 [Back to top](#table-of-contents)
+
 ---
 
 ### Explain Redux
@@ -1435,6 +1450,7 @@ In this example:
             Predictability: When you need predictable, testable, and traceable state changes.
 
 [Back to top](#table-of-contents)
+
 ---
 
 ### 29. Performance Optimization in React

@@ -969,10 +969,6 @@ function Child({ user }) {
 }
 ```
 
-### Key Points:
-- **Definition**: Clearly explains what prop drilling is and its challenges.
-- **Example**: A straightforward code example illustrates how prop drilling works.
-- **Solutions**: Offers common solutions such as using **Context API** and **state management libraries** to avoid prop drilling.
 
 
 [Back to top](#table-of-contents)

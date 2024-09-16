@@ -1164,16 +1164,9 @@ function ItemList({ items }) {
 [Back to top](#table-of-contents)
 ---
 
+### Lazy Loading and Code Splitting
+
 ### 26. Lazy Loading and Code Splitting
-
-### 8. Lazy Loading and Code Splitting
-
-**Lazy Loading** and **Code Splitting** are performance optimization techniques used in React applications to improve the efficiency of loading resources. They help reduce the initial load time of an application by splitting code into smaller chunks and loading only the necessary parts when needed.
-
----
-
-#### What is Lazy Loading?
-#### 26.What is Lazy Loading?
 
 **Lazy Loading** is a technique where components or resources are loaded only when they are needed, rather than all at once. In a React application, this is typically done for components that are not immediately necessary, such as routes or large components that might not be visible when the app initially loads. By deferring the loading of these components, you can improve the initial load time of the application, which results in a better user experience, especially for users on slower networks.
 

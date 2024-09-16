@@ -974,7 +974,7 @@ function Child({ user }) {
 
 ### Pure Component vs Regular Component
 
-### 23. Pure Component vs Regular Component
+### 22. Pure Component vs Regular Component
 
 In React, **Pure Components** and **Regular Components** (or "class components") differ in how they handle updates and rendering optimization.
 
@@ -1003,6 +1003,21 @@ class MyPureComponent extends PureComponent {
     return <div>{this.props.name}</div>;
   }
 }
+
+#### Regular Component:
+A **Regular Component** is a standard class component in React. By default, it does not implement any shallow comparison of props or state, meaning it re-renders every time the parent component re-renders, regardless of whether the props or state have changed.
+
+```jsx
+import React, { Component } from 'react';
+
+class RegularComponent extends Component {
+  render() {
+    console.log('Regular Component Rendered');
+    return <div>Regular Component - {this.props.name}</div>;
+  }
+}
+
+export default RegularComponent;
 ```
 
 [Back to top](#table-of-contents)

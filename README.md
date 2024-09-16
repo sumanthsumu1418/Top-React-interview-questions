@@ -1102,9 +1102,36 @@ export default Counter;
 ```
 
 [Back to top](#table-of-contents)
+---
 
+### React Fragments
 ### 24. React Fragments
+
+**React Fragments** let you group multiple elements without adding extra nodes to the DOM. In situations where you need to return multiple elements from a component, you might be tempted to wrap them in a `<div>`. However, this can lead to unwanted additional markup in the DOM. Instead, React provides **Fragments** as a cleaner solution to wrap multiple elements without introducing extra DOM elements.
+
+#### Why Use React Fragments?
+- **Avoid Extra DOM Nodes**: Wrapping multiple elements in a `<div>` can clutter the DOM with unnecessary elements. Fragments solve this by grouping children without adding an extra wrapper element to the DOM.
+- **Cleaner JSX**: Fragments make the JSX structure cleaner and avoid unnecessary elements that can affect styling and layout.
+
+#### Example of Using Fragments:
+
+1. **Using `<React.Fragment>`**:
+```jsx
+import React from 'react';
+
+function FragmentExample() {
+  return (
+    <React.Fragment>
+      <h1>Title</h1>
+      <p>This is a paragraph.</p>
+    </React.Fragment>
+  );
+}
+
+export default FragmentExample;
+```
 [Back to top](#table-of-contents)
+---
 
 ### 25. Reconciliation Without Keys
 [Back to top](#table-of-contents)

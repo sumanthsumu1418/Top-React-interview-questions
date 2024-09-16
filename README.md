@@ -1133,8 +1133,36 @@ export default FragmentExample;
 [Back to top](#table-of-contents)
 ---
 
+###  Reconciliation Without Keys
+
 ### 25. Reconciliation Without Keys
+
+**Reconciliation** is the process React uses to compare the current Virtual DOM with the new Virtual DOM to determine the minimal set of changes needed to update the actual DOM. Keys play an essential role in this process when rendering lists of elements. React uses keys to uniquely identify each element in a list, which helps optimize the reconciliation process by allowing React to track elements more efficiently.
+
+#### What Happens Without Keys?
+
+When keys are not provided, or when non-unique keys are used (such as using indices), React may not efficiently recognize changes in the list. This can lead to:
+
+1. **Incorrect Element Matching**: React may not properly match elements during the reconciliation process, resulting in incorrect updates or rendering issues.
+2. **Performance Degradation**: Without keys, React compares elements in a brute-force manner, potentially leading to unnecessary re-renders or inefficient updates.
+3. **Unpredictable Behavior**: The absence of keys can cause issues like improper reordering of elements, incorrect animations, or loss of input field focus, as React can mistakenly reuse DOM elements that should be updated or replaced.
+
+#### Example Without Keys:
+In this example, React may have trouble identifying which list item has changed:
+
+```jsx
+function ItemList({ items }) {
+  return (
+    <ul>
+      {items.map((item, index) => (
+        <li>{item}</li> // No keys provided
+      ))}
+    </ul>
+  );
+}
+```
 [Back to top](#table-of-contents)
+---
 
 ### 26. Lazy Loading and Code Splitting
 [Back to top](#table-of-contents)

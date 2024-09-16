@@ -1024,8 +1024,8 @@ export default RegularComponent;
 [Back to top](#table-of-contents)
 ===
 
+### useReducer vs useState
 ### 23. useReducer vs useState
-### 5. useReducer vs useState
 
 In React, both **`useReducer`** and **`useState`** are hooks used to manage state, but they serve different purposes and are suited for different use cases. 
 

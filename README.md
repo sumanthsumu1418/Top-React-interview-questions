@@ -948,12 +948,13 @@ Both the **Context API** and **Redux** are tools used for managing global state 
 ---
 
 ### 22. What is Prop Drilling?
+ 22.**What is Prop Drilling?**
 
 **Prop Drilling** refers to the process of passing data from a parent component to a deeply nested child component through multiple intermediary components. This often happens when intermediate components don’t need the data themselves but are used to pass props further down the tree. This can lead to a less maintainable and more complex component structure, especially in larger applications.
 
 #### Example of Prop Drilling:
 
-`jsx
+```jsx
 function Grandparent() {
   const [user, setUser] = useState('John Doe');
   return <Parent user={user} />;
@@ -966,6 +967,7 @@ function Parent({ user }) {
 function Child({ user }) {
   return <p>User: {user}</p>;
 }
+```
 
 ### Key Points:
 - **Definition**: Clearly explains what prop drilling is and its challenges.

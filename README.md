@@ -968,18 +968,45 @@ function Child({ user }) {
   return <p>User: {user}</p>;
 }
 ```
-### Key Points:
-- **Definition**: A clear explanation of what **Prop Drilling** is.
-- **Example**: A concise example illustrates how prop drilling occurs in a component hierarchy.
-- **Solutions**: Solutions such as **Context API** and **State Management Libraries** are mentioned as ways to avoid prop drilling.
-
-
 
 [Back to top](#table-of-contents)
 ---
 
+### Pure Component vs Regular Component
+
 ### 23. Pure Component vs Regular Component
+
+In React, **Pure Components** and **Regular Components** (or "class components") differ in how they handle updates and rendering optimization.
+
+- **Pure Component**: A **PureComponent** in React is a class component that automatically implements `shouldComponentUpdate` with a shallow comparison of props and state. This means that a pure component will only re-render if there is a change in its props or state, making it more efficient in terms of performance for certain use cases.
+
+- **Regular Component**: A regular class component does not implement `shouldComponentUpdate` by default. This means that it will re-render whenever its parent re-renders, even if the props or state haven't changed. You need to manually implement `shouldComponentUpdate` to control when the component should re-render.
+
+#### Key Differences:
+
+| **Pure Component**                                | **Regular Component**                          |
+|---------------------------------------------------|------------------------------------------------|
+| Implements `shouldComponentUpdate` by default with a shallow prop and state comparison. | Does not implement `shouldComponentUpdate` by default. |
+| Only re-renders when there is a change in props or state (based on shallow comparison). | Re-renders whenever the parent component re-renders, unless `shouldComponentUpdate` is manually implemented. |
+| Suitable for components with simple, immutable data structures. | Suitable for components where state or props are frequently changing. |
+| Can optimize performance by preventing unnecessary re-renders. | May cause performance issues due to unnecessary re-renders. |
+
+#### Example:
+
+**Pure Component:**
+```jsx
+import React, { PureComponent } from 'react';
+
+class MyPureComponent extends PureComponent {
+  render() {
+    console.log('Pure component re-rendered');
+    return <div>{this.props.name}</div>;
+  }
+}
+```
+
 [Back to top](#table-of-contents)
+===
 
 ### 24. useReducer vs useState
 [Back to top](#table-of-contents)

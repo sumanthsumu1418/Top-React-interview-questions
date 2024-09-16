@@ -1241,6 +1241,75 @@ export default App;
 ---
 
 ### 27. What is an Error Boundary?
+
+### 9. What is an Error Boundary?
+
+**Error Boundaries** are React components that catch JavaScript errors anywhere in their child component tree, log those errors, and display a fallback UI instead of crashing the entire application. Error boundaries help ensure that the rest of the application continues to function even when a part of it encounters an error.
+
+#### Key Features of Error Boundaries:
+- Error boundaries catch errors during **rendering**, in **lifecycle methods**, and in **constructor functions** of the entire tree below them.
+- They are designed to handle **runtime errors** in React components, but **do not catch errors** in event handlers, asynchronous code (e.g., `setTimeout`, `fetch`), or server-side rendering.
+
+#### Common Use Cases for Error Boundaries:
+- **Displaying Fallback UI**: When a component tree crashes due to an error, an error boundary can display a fallback UI (like a message or a simplified interface) instead of a blank page or broken UI.
+- **Logging Errors**: Error boundaries can be used to log errors to external services (e.g., Sentry, LogRocket) to track and debug issues in production.
+
+#### When to Use Error Boundaries:
+- **Critical Sections**: Use error boundaries to wrap critical sections of your application, such as the main content area, to ensure that even if a bug is encountered, the rest of the app remains functional.
+- **Third-Party Libraries**: If you are using third-party components or libraries that you do not control, wrapping them with error boundaries can prevent your app from breaking if those components fail.
+
+#### Limitations:
+- Error boundaries **do not catch errors** for:
+  - Event handlers
+  - Asynchronous code (e.g., `setTimeout`, `Promise`)
+  - Server-side rendering (SSR)
+  - Errors thrown in the error boundary itself
+
+Benefits of Using Error Boundaries:
+  - Improved User Experience: Instead of the entire application crashing, the error boundary gracefully handles errors and displays a 
+   fallback UI.
+  - Error Logging: You can use error boundaries to log errors to an external service, helping developers track and fix issues.
+  - Component Isolation: Errors are isolated to specific parts of the app, preventing the failure of one component from affecting the rest 
+    of the application.
+
+
+#### How to Implement an Error Boundary:
+
+Error boundaries are implemented using React class components by overriding the lifecycle methods `componentDidCatch` and `getDerivedStateFromError`. Functional components cannot be error boundaries (as of now).
+
+##### Example of an Error Boundary:
+
+```jsx
+import React, { Component } from 'react';
+
+class ErrorBoundary extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { hasError: false };
+  }
+
+  // Update state so the next render will show the fallback UI
+  static getDerivedStateFromError(error) {
+    return { hasError: true };
+  }
+
+  // Log the error
+  componentDidCatch(error, errorInfo) {
+    console.error('Error caught by Error Boundary: ', error, errorInfo);
+  }
+
+  render() {
+    if (this.state.hasError) {
+      // Render any fallback UI
+      return <h1>Something went wrong.</h1>;
+    }
+
+    return this.props.children;
+  }
+}
+
+export default ErrorBoundary;
+```
 [Back to top](#table-of-contents)
 
 ### 28. Explain Redux

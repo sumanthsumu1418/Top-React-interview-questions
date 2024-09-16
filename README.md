@@ -967,7 +967,11 @@ function Parent({ user }) {
 function Child({ user }) {
   return <p>User: {user}</p>;
 }
-
+```
+### Key Points:
+- **Definition**: A clear explanation of what **Prop Drilling** is.
+- **Example**: A concise example illustrates how prop drilling occurs in a component hierarchy.
+- **Solutions**: Solutions such as **Context API** and **State Management Libraries** are mentioned as ways to avoid prop drilling.
 
 
 

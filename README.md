@@ -1003,9 +1003,10 @@ class MyPureComponent extends PureComponent {
     return <div>{this.props.name}</div>;
   }
 }
+```
 
-#### Regular Component:
-A **Regular Component** is a standard class component in React. By default, it does not implement any shallow comparison of props or state, meaning it re-renders every time the parent component re-renders, regardless of whether the props or state have changed.
+**Regular Component:**
+
 
 ```jsx
 import React, { Component } from 'react';

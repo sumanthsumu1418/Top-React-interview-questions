@@ -1165,6 +1165,46 @@ function ItemList({ items }) {
 ---
 
 ### 26. Lazy Loading and Code Splitting
+
+### 8. Lazy Loading and Code Splitting
+
+**Lazy Loading** and **Code Splitting** are performance optimization techniques used in React applications to improve the efficiency of loading resources. They help reduce the initial load time of an application by splitting code into smaller chunks and loading only the necessary parts when needed.
+
+---
+
+#### What is Lazy Loading?
+
+**Lazy Loading** is a technique where components or resources are loaded only when they are needed, rather than all at once. In a React application, this is typically done for components that are not immediately necessary, such as routes or large components that might not be visible when the app initially loads. By deferring the loading of these components, you can improve the initial load time of the application, which results in a better user experience, especially for users on slower networks.
+
+**Benefits of Lazy Loading:**
+**Improved Initial Load Time:** By loading only what is necessary for the first screen, you reduce the time it takes for the page to become interactive.
+**Better User Experience:** Resources and components are loaded only when needed, which leads to faster interactions as users navigate through the app.
+**Reduced Bandwidth Usage:** Lazy loading minimizes the amount of data that needs to be downloaded, which is especially beneficial for users with slow or limited internet connections.
+
+##### Example of Lazy Loading in React:
+
+React provides the **`React.lazy()`** function to enable lazy loading of components. It works in combination with **`Suspense`**, which allows you to specify a fallback UI (e.g., a loading spinner) to display while the component is being loaded asynchronously.
+
+```jsx
+import React, { Suspense } from 'react';
+
+// Lazy load the component
+const LazyComponent = React.lazy(() => import('./LazyComponent'));
+
+function App() {
+  return (
+    <div>
+      <h1>My App</h1>
+      <Suspense fallback={<div>Loading...</div>}>
+        <LazyComponent />
+      </Suspense>
+    </div>
+  );
+}
+
+export default App;
+```
+
 [Back to top](#table-of-contents)
 
 ### 27. What is an Error Boundary?

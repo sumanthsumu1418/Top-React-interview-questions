@@ -66,8 +66,6 @@ return <h1>Welcome, {user}!</h1>; // Embeds JavaScript logic into JSX
 
 [Back to top](#table-of-contents)
 
-</br>
-
 </details>
 
 ---
@@ -97,8 +95,6 @@ function updateItem(index, newItem) {
 }
 ```
 [Back to top](#table-of-contents)
-
-</br>
 
 </details>
 

@@ -1291,86 +1291,6 @@ function ItemList({ items }) {
 
 ---
 
-### Lazy Loading and Code Splitting
-<details>
----
-
-<summary><br> 29. Lazy Loading and Code Splitting </summary></br>
-
-**Lazy Loading** is a technique where components or resources are loaded only when they are needed, rather than all at once. In a React application, this is typically done for components that are not immediately necessary, such as routes or large components that might not be visible when the app initially loads. By deferring the loading of these components, you can improve the initial load time of the application, which results in a better user experience, especially for users on slower networks.
-
-#### Benefits of Lazy Loading:
-- **Improved Initial Load Time**: By loading only what is necessary for the first screen, you reduce the time it takes for the page to become interactive.
-- **Better User Experience**: Resources and components are loaded only when needed, which leads to faster interactions as users navigate through the app.
-- **Reduced Bandwidth Usage**: Lazy loading minimizes the amount of data that needs to be downloaded, which is especially beneficial for users with slow or limited internet connections.
-
-##### Example of Lazy Loading in React:
-
-```jsx
-import React, { Suspense } from 'react';
-
-// Lazy load the component
-const LazyComponent = React.lazy(() => import('./LazyComponent'));
-
-function App() {
-  return (
-    <div>
-      <h1>My App</h1>
-      <Suspense fallback={<div>Loading...</div>}>
-        <LazyComponent />
-      </Suspense>
-    </div>
-  );
-}
-
-export default App;
-```
-**Code Splitting** is a technique that allows you to split your JavaScript code into multiple smaller files (or chunks) so that the browser only loads the code it needs at a given time. This is especially useful in larger applications where loading the entire app's code at once can slow down the initial page load. With code splitting, you can load parts of your application on demand, which leads to better performance and faster user experiences.
-
----
-
-#### Why Use Code Splitting?
-
-- **Improved Performance**: By breaking your code into smaller pieces, the browser only downloads the necessary code for the current page or view. This reduces the size of the JavaScript bundle that needs to be downloaded and executed at once.
-- **Reduced Initial Load Time**: Since only the code needed for the initial view is loaded, the time it takes for the application to become interactive is reduced.
-- **On-Demand Loading**: Additional code is only loaded when it is actually needed, such as when the user navigates to a new page or interacts with a feature.
-
----
-
-#### How to Implement Code Splitting in React:
-
-React uses dynamic imports and **`React.lazy()`** to implement code splitting. This allows you to load components only when they are needed, which helps reduce the size of your initial bundle.
-
-##### Example of Code Splitting:
-
-Here is how you can use dynamic imports and lazy loading in React to split your code into smaller bundles:
-
-```jsx
-import React, { Suspense } from 'react';
-
-// Dynamically import the component
-const AboutPage = React.lazy(() => import('./AboutPage'));
-
-function App() {
-  return (
-    <div>
-      <h1>My App</h1>
-      {/* Lazy load the AboutPage component */}
-      <Suspense fallback={<div>Loading About Page...</div>}>
-        <AboutPage />
-      </Suspense>
-    </div>
-  );
-}
-
-export default App;
-```
-[Back to top](#table-of-contents)
-
-</details>
-
----
-
 ###  What is an Error Boundary?
 <details>
 ---
@@ -1453,7 +1373,7 @@ export default ErrorBoundary;
 <details>
 ---
 
-<summary><br> 28. Explain Redux </summary></br>
+<summary><br> 27. Explain Redux </summary></br>
 
 **Redux** is a predictable state container for JavaScript applications, commonly used with React. It helps manage the state of an application in a centralized store and allows any component to access this state, making state management more predictable and easier to debug.
 
@@ -1727,6 +1647,85 @@ const handleClick = () => doSomething();
 3.**`Complex state management`**: In complex applications, useReducer combined with memoization and code splitting can optimize performance and help structure the app efficiently.
 4.**`Improving load times`**: Code splitting and lazy loading can reduce the size of the initial JavaScript bundle, improving the application’s load time and performance.
 
+[Back to top](#table-of-contents)
+
+</details>
+
+---
+### Lazy Loading and Code Splitting
+<details>
+---
+
+<summary><br> 29. Lazy Loading and Code Splitting </summary></br>
+
+**Lazy Loading** is a technique where components or resources are loaded only when they are needed, rather than all at once. In a React application, this is typically done for components that are not immediately necessary, such as routes or large components that might not be visible when the app initially loads. By deferring the loading of these components, you can improve the initial load time of the application, which results in a better user experience, especially for users on slower networks.
+
+#### Benefits of Lazy Loading:
+- **Improved Initial Load Time**: By loading only what is necessary for the first screen, you reduce the time it takes for the page to become interactive.
+- **Better User Experience**: Resources and components are loaded only when needed, which leads to faster interactions as users navigate through the app.
+- **Reduced Bandwidth Usage**: Lazy loading minimizes the amount of data that needs to be downloaded, which is especially beneficial for users with slow or limited internet connections.
+
+##### Example of Lazy Loading in React:
+
+```jsx
+import React, { Suspense } from 'react';
+
+// Lazy load the component
+const LazyComponent = React.lazy(() => import('./LazyComponent'));
+
+function App() {
+  return (
+    <div>
+      <h1>My App</h1>
+      <Suspense fallback={<div>Loading...</div>}>
+        <LazyComponent />
+      </Suspense>
+    </div>
+  );
+}
+
+export default App;
+```
+**Code Splitting** is a technique that allows you to split your JavaScript code into multiple smaller files (or chunks) so that the browser only loads the code it needs at a given time. This is especially useful in larger applications where loading the entire app's code at once can slow down the initial page load. With code splitting, you can load parts of your application on demand, which leads to better performance and faster user experiences.
+
+---
+
+#### Why Use Code Splitting?
+
+- **Improved Performance**: By breaking your code into smaller pieces, the browser only downloads the necessary code for the current page or view. This reduces the size of the JavaScript bundle that needs to be downloaded and executed at once.
+- **Reduced Initial Load Time**: Since only the code needed for the initial view is loaded, the time it takes for the application to become interactive is reduced.
+- **On-Demand Loading**: Additional code is only loaded when it is actually needed, such as when the user navigates to a new page or interacts with a feature.
+
+---
+
+#### How to Implement Code Splitting in React:
+
+React uses dynamic imports and **`React.lazy()`** to implement code splitting. This allows you to load components only when they are needed, which helps reduce the size of your initial bundle.
+
+##### Example of Code Splitting:
+
+Here is how you can use dynamic imports and lazy loading in React to split your code into smaller bundles:
+
+```jsx
+import React, { Suspense } from 'react';
+
+// Dynamically import the component
+const AboutPage = React.lazy(() => import('./AboutPage'));
+
+function App() {
+  return (
+    <div>
+      <h1>My App</h1>
+      {/* Lazy load the AboutPage component */}
+      <Suspense fallback={<div>Loading About Page...</div>}>
+        <AboutPage />
+      </Suspense>
+    </div>
+  );
+}
+
+export default App;
+```
 [Back to top](#table-of-contents)
 
 </details>

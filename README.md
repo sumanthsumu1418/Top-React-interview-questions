@@ -457,8 +457,8 @@ const store = createStore(userReducer, applyMiddleware(thunk));
 // Dispatching the async action
 store.dispatch(fetchUser());
 ```
-[Back to top](#table-of-contents)
 
+[Back to top](#table-of-contents)
 </details>
 ---
 

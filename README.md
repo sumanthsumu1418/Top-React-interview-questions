@@ -40,7 +40,7 @@ This repository provides a collection of **React Interview Questions** to help d
 
 <details>
   
-<summary> <span style="color: red;"> ### What is JSX, and how is it different from HTML? </span> </summary>
+<summary> <br> ### What is JSX, and how is it different from HTML? </br> </summary>
 
 <br>
 
@@ -62,10 +62,11 @@ Let’s say we want to greet a user by name. With JSX, you can easily embed Java
 ```jsx
 const user = "Jane";
 return <h1>Welcome, {user}!</h1>; // Embeds JavaScript logic into JSX
-```
+
 [Back to top](#table-of-contents)
 
 </details>
+```
 ---
 
 ## Virtual DOM
@@ -92,6 +93,7 @@ function updateItem(index, newItem) {
 }
 ```
 [Back to top](#table-of-contents)
+
 ---
 ## Reconciliation in React
 

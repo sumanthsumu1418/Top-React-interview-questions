@@ -172,8 +172,7 @@ function Counter({ initialCount }) {  // Props: initialCount
 
 ## useState vs useEffect
 
-<details>
-  
+<details>  
 <summary> <br> 5. Explain the difference between `useState` and `useEffect` in React. </br> </summary>
 
 In React, `useState` and `useEffect` are two of the most commonly used hooks that help manage component behavior, but they serve very different purposes.
@@ -229,10 +228,9 @@ In this example:
 ## Higher-Order Components (HOC)
 
 <details>
-  
 <summary> <br> 6. What is a Higher-Order Component (HOC) in React? </br> </summary>
 
-   ### Higher-Order Components (HOC)
+### Higher-Order Components (HOC)
 
 A **Higher-Order Component (HOC)** is a function in React that takes a component and returns a new component with additional props or behavior. HOCs are used to reuse logic across multiple components without modifying the components themselves. Instead, they "wrap" the original component and add functionality.
 
@@ -282,9 +280,11 @@ export default withAuth(Dashboard); // Dashboard now requires authentication
 ## useCallback vs useMemo
 
 <details>
+---
   
-<summary> <br> 7. What is the difference between `useCallback` and `useMemo`?
-### `useCallback` vs `useMemo`  </br> </summary>
+<summary> <br> 7. What is the difference between `useCallback` and `useMemo`? </br> </summary>
+
+### `useCallback` vs `useMemo`  
 
 In React, `useCallback` and `useMemo` are hooks that optimize the performance of your components by memoizing values and functions. They both help to prevent unnecessary re-renders or recalculations, but they are used in different scenarios.
 

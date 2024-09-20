@@ -40,6 +40,8 @@ This repository provides a collection of **React Interview Questions** to help d
 
 ### What is JSX, and how is it different from HTML?
 
+<details>
+  
 JSX (JavaScript XML) is a syntax extension for JavaScript used in React. It allows developers to write HTML-like code inside JavaScript and is primarily used to structure the UI in React applications. However, JSX is not valid HTML or JavaScript, so it must be transpiled into JavaScript using tools like Babel before the browser can process it.
 
 **Key Differences**:
@@ -60,6 +62,8 @@ const user = "Jane";
 return <h1>Welcome, {user}!</h1>; // Embeds JavaScript logic into JSX
 ```
 [Back to top](#table-of-contents)
+
+</details>
 
 ---
 

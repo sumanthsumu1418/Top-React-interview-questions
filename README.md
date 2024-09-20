@@ -1256,7 +1256,7 @@ export default App;
 
 ###  What is an Error Boundary?
 
-### 27. What is an Error Boundary?
+### 26. What is an Error Boundary?
 
 **Error Boundaries** are React components that catch JavaScript errors anywhere in their child component tree, log those errors, and display a fallback UI instead of crashing the entire application. Error boundaries help ensure that the rest of the application continues to function even when a part of it encounters an error.
 

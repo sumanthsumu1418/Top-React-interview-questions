@@ -279,8 +279,7 @@ export default withAuth(Dashboard); // Dashboard now requires authentication
 
 ## useCallback vs useMemo
 
-<details>
-<summary> <br> 7. What is the difference between `useCallback` and `useMemo`?
+ ### 7. What is the difference between `useCallback` and `useMemo`?
 ### `useCallback` vs `useMemo` </summary>
 
 In React, `useCallback` and `useMemo` are hooks that optimize the performance of your components by memoizing values and functions. They both help to prevent unnecessary re-renders or recalculations, but they are used in different scenarios.
@@ -318,8 +317,6 @@ function ParentComponent() {
 }
 ```
 [Back to top](#table-of-contents)
-
-<details>
 
 ---
 

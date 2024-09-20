@@ -100,8 +100,8 @@ function updateItem(index, newItem) {
 
 ---
 ## Reconciliation in React
-
-### What is Reconciliation in React?
+<details>
+<summary> <br> 3. What is Reconciliation in React? </br> </summary>
 
 Reconciliation is the process React uses to update the real DOM efficiently. When the state or props of a component change, React creates a new Virtual DOM and compares it with the previous version. This comparison (or "diffing") allows React to determine what has changed. Instead of updating the entire DOM, React only updates the parts that have changed, making the process much faster and more efficient.
 
@@ -126,6 +126,8 @@ function updateQuantity(index, newQuantity) {
 }
 ```
 [Back to top](#table-of-contents)
+
+</details>
 
 ---
 

@@ -234,6 +234,7 @@ In this example:
 
 <details>
 ---
+  
 <summary> <br> 6. What is a Higher-Order Component (HOC) in React? </br> </summary>
 
 ### Higher-Order Components (HOC)
@@ -280,6 +281,7 @@ export default withAuth(Dashboard); // Dashboard now requires authentication
 [Back to top](#table-of-contents)
 
 </details>
+
 ---
 
 ## useCallback vs useMemo

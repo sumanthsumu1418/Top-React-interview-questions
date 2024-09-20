@@ -460,6 +460,7 @@ store.dispatch(fetchUser());
 
 [Back to top](#table-of-contents)
 </details>
+
 ---
 
 ## Class Components vs Functional Components

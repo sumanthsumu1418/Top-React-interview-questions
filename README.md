@@ -985,6 +985,10 @@ While Redux is powerful and widely used, it can be overkill for smaller or simpl
 ---
 
 ### Controlled vs Uncontrolled Components
+<details>
+---
+  
+<summary> <br> 19. Controlled vs Uncontrolled Components </summary></br>
 
 In React, **controlled components** and **uncontrolled components** are two different ways of handling form inputs.
 
@@ -1003,11 +1007,14 @@ In React, **controlled components** and **uncontrolled components** are two diff
 
 [Back to top](#table-of-contents)
 
+</details>
 
 ---
 ## Context API vs Redux
+<details>
+---
 
-### 20. Context API vs Redux
+<summary><br>  20. Context API vs Redux </br></summary>
 
 Both the **Context API** and **Redux** are tools used for managing global state in React applications. However, they serve different purposes and are used in different scenarios depending on the complexity and scalability needs of the application.
 
@@ -1037,10 +1044,14 @@ Both the **Context API** and **Redux** are tools used for managing global state 
 
 [Back to top](#table-of-contents)
 
+</details>
+
 ---
 ###  What is Prop Drilling?
+<details>
+---
 
-### 21. What is Prop Drilling?
+<summary><br> 21. What is Prop Drilling ? </summary></br>
 
 **Prop Drilling** occurs when data is passed from a parent component to deeply nested child components via multiple layers of intermediary components. This approach becomes problematic when components that don’t need the data are forced to pass it along, leading to less maintainable code and unnecessary complexity.
 
@@ -1063,11 +1074,15 @@ function Child({ user }) {
 
 [Back to top](#table-of-contents)
 
+</details>
+
 ---
 
 ### Pure Component vs Regular Component
+<details>
+---
 
-### 22. Pure Component vs Regular Component
+<summary><br> 22. Pure Component vs Regular Component </summary> </br>
 
 In React, **Pure Components** and **Regular Components** (or "class components") differ in how they handle updates and rendering optimization.
 
@@ -1116,10 +1131,15 @@ export default RegularComponent;
 
 [Back to top](#table-of-contents)
 
-===
+</details>
+
+---
 
 ### useReducer vs useState
-### 23. useReducer vs useState
+<details>
+---
+
+<summary><br> 23. useReducer vs useState </summary></br>
 
 In React, both **`useReducer`** and **`useState`** are hooks used to manage state, but they serve different purposes and are suited for different use cases. 
 
@@ -1196,10 +1216,15 @@ export default Counter;
 ```
 [Back to top](#table-of-contents)
 
+</details>
+
 ---
 
 ### React Fragments
-### 24. React Fragments
+<details>
+---
+
+<summary><br> 24. React Fragments </summary></br>
 
 **React Fragments** let you group multiple elements without adding extra nodes to the DOM. In situations where you need to return multiple elements from a component, you might be tempted to wrap them in a `<div>`. However, this can lead to unwanted additional markup in the DOM. Instead, React provides **Fragments** as a cleaner solution to wrap multiple elements without introducing extra DOM elements.
 
@@ -1226,11 +1251,15 @@ export default FragmentExample;
 ```
 [Back to top](#table-of-contents)
 
+</details>
+
 ---
 
 ###  Reconciliation Without Keys
+<details>
+---
 
-### 25. Reconciliation Without Keys
+<summary><br> 25. Reconciliation Without Keys </summary></br>
 
 **Reconciliation** is the process React uses to compare the current Virtual DOM with the new Virtual DOM to determine the minimal set of changes needed to update the actual DOM. Keys play an essential role in this process when rendering lists of elements. React uses keys to uniquely identify each element in a list, which helps optimize the reconciliation process by allowing React to track elements more efficiently.
 
@@ -1258,11 +1287,15 @@ function ItemList({ items }) {
 ```
 [Back to top](#table-of-contents)
 
+</details>
+
 ---
 
 ### Lazy Loading and Code Splitting
+<details>
+---
 
-### 29. Lazy Loading and Code Splitting
+<summary><br> 29. Lazy Loading and Code Splitting </summary></br>
 
 **Lazy Loading** is a technique where components or resources are loaded only when they are needed, rather than all at once. In a React application, this is typically done for components that are not immediately necessary, such as routes or large components that might not be visible when the app initially loads. By deferring the loading of these components, you can improve the initial load time of the application, which results in a better user experience, especially for users on slower networks.
 
@@ -1334,11 +1367,15 @@ export default App;
 ```
 [Back to top](#table-of-contents)
 
+</details>
+
 ---
 
 ###  What is an Error Boundary?
+<details>
+---
 
-### 26. What is an Error Boundary?
+<summary><br> 26. What is an Error Boundary ? </summary></br>
 
 **Error Boundaries** are React components that catch JavaScript errors anywhere in their child component tree, log those errors, and display a fallback UI instead of crashing the entire application. Error boundaries help ensure that the rest of the application continues to function even when a part of it encounters an error.
 
@@ -1408,10 +1445,15 @@ export default ErrorBoundary;
 ```
 [Back to top](#table-of-contents)
 
+</details>
+
 ---
 
 ### Explain Redux
-### 28. Explain Redux
+<details>
+---
+
+<summary><br> 28. Explain Redux </summary></br>
 
 **Redux** is a predictable state container for JavaScript applications, commonly used with React. It helps manage the state of an application in a centralized store and allows any component to access this state, making state management more predictable and easier to debug.
 
@@ -1533,11 +1575,15 @@ In this example:
 
 [Back to top](#table-of-contents)
 
+</details>
+
 ---
 
 ### Performance Optimization in React
+<details>
+---
 
-### 28. Performance Optimization in React
+<summary><br> 28. Performance Optimization in React </summary></br>
 
 Performance optimization is crucial in React applications to ensure a smooth user experience, particularly as applications grow in size and complexity. React provides several built-in tools and techniques that help improve the rendering performance of components and reduce unnecessary re-renders.
 
@@ -1682,5 +1728,7 @@ const handleClick = () => doSomething();
 4.**`Improving load times`**: Code splitting and lazy loading can reduce the size of the initial JavaScript bundle, improving the application’s load time and performance.
 
 [Back to top](#table-of-contents)
+
+</details>
 
 ---

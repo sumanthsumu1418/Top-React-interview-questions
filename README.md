@@ -392,7 +392,6 @@ console.log(store.getState());  // Output: 1
 ---
 
 ## Redux Thunk
-
 <details>
 ---
   

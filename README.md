@@ -40,7 +40,7 @@ This repository provides a collection of **React Interview Questions** to help d
 
 <details>
   
-<summary> <br> ### What is JSX, and how is it different from HTML? </br> </summary>
+<summary> <br> 1. What is JSX, and how is it different from HTML? </br> </summary>
 
 <br>
 
@@ -67,6 +67,7 @@ return <h1>Welcome, {user}!</h1>; // Embeds JavaScript logic into JSX
 [Back to top](#table-of-contents)
 
 </details>
+
 ---
 
 ## Virtual DOM

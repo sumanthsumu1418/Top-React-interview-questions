@@ -66,13 +66,16 @@ return <h1>Welcome, {user}!</h1>; // Embeds JavaScript logic into JSX
 
 [Back to top](#table-of-contents)
 
+</br>
+
 </details>
 
 ---
 
 ## Virtual DOM
 
-### What is the Virtual DOM, and how does React use it?
+<details>
+<summary> <br> 2. What is the Virtual DOM, and how does React use it? </summary> </br>
 
 The Virtual DOM is a lightweight, in-memory representation of the actual DOM. React uses the Virtual DOM to improve performance and efficiency when rendering UI updates. Instead of directly manipulating the real DOM, React updates the Virtual DOM first. Once the changes are made, React compares (or "diffs") the new Virtual DOM with the previous version, and only the parts that have changed are updated in the real DOM. This process is called **reconciliation**.
 
@@ -94,6 +97,10 @@ function updateItem(index, newItem) {
 }
 ```
 [Back to top](#table-of-contents)
+
+</br>
+
+</details>
 
 ---
 ## Reconciliation in React

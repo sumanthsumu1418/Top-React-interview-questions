@@ -30,10 +30,10 @@ This repository provides a collection of **React Interview Questions** to help d
 25. [useReducer vs useState](#usereducer-vs-usestate)
 26. [React Fragments](#react-fragments)
 27. [Reconciliation Without Keys](#reconciliation-without-keys)
-28. [Lazy Loading and Code Splitting](#lazy-loading-and-code-splitting)
 29. [What is an Error Boundary?](#what-is-an-error-boundary)
 30. [Explain Redux](#explain-redux)
 31. [Performance Optimization in React](#performance-optimization-in-react)
+32. 28. [Lazy Loading and Code Splitting](#lazy-loading-and-code-splitting)
 
 ---
 ## jsx

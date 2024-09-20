@@ -10,7 +10,7 @@ This repository provides a collection of **React Interview Questions** to help d
 3. [Reconciliation in React](#reconciliation-in-react)
 4. [Props vs State](#props-vs-state)
 5. [useState vs useEffect](#usestate-vs-useeffect)
-6. [Higher-Order Components (HOC)](#Higher-Order)
+6. [Higher-Order Components](#Higher-Order)
 7. [useCallback vs useMemo](#usecallback-vs-usememo)
 8. [Redux](#redux)
 9. [Redux Thunk](#redux-thunk)
@@ -230,7 +230,7 @@ In this example:
 
 ---
 
-## Higher-Order Components (HOC)
+## Higher-Order Components
 
 <details>
 ---

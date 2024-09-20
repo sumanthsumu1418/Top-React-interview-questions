@@ -1476,9 +1476,8 @@ Performance optimization is crucial in React applications to ensure a smooth use
    ```
    
 2. **`Using useMemo()`**: useMemo() is a hook that memoizes the result of an expensive calculation and recalculates it only when its dependencies change. This can help optimize performance by avoiding unnecessary computations on each render.
-```
-jsx
-Copy code
+
+```jsx
 import React, { useMemo } from 'react';
 
 function ExpensiveComponent({ items }) {
@@ -1500,9 +1499,7 @@ export default ExpensiveComponent;
 
 3.**`Using useCallback()`**: useCallback() is used to memoize functions so that they are not recreated on every render. This is particularly useful when passing functions to child components that depend on the function reference.
 
-```
-jsx
-Copy code
+```jsx
 import React, { useCallback, useState } from 'react';
 
 function Counter() {
@@ -1520,9 +1517,8 @@ export default Counter;
 
 4.**`Code Splitting`**: Code splitting allows you to split your application into smaller bundles that can be loaded on demand, improving the initial load time. React’s React.lazy() and Suspense allow you to lazy load components when they are needed.
 
-```
-jsx
-Copy code
+```jsx
+
 import React, { Suspense } from 'react';
 
 const LazyComponent = React.lazy(() => import('./LazyComponent'));
@@ -1540,9 +1536,7 @@ export default App;
 
 5. **`Virtualization with react-window or react-virtualized`**: Virtualization helps in efficiently rendering long lists of data by rendering only the items that are currently visible in the viewport. Libraries like react-window or react-virtualized are great for this purpose.
 
-```
-jsx
-Copy code
+```jsx
 import { FixedSizeList as List } from 'react-window';
 
 function App() {
@@ -1568,9 +1562,8 @@ export default App;
 ```
 
 6.**Optimizing Re-renders with `shouldComponentUpdate()` or `PureComponent`**: In class components, using shouldComponentUpdate() allows you to control whether a component should re-render. Alternatively, you can extend PureComponent to automatically implement shallow comparison for props and state.
-```
-jsx
-Copy code
+
+```jsx
 import React, { PureComponent } from 'react';
 
 class MyComponent extends PureComponent {
@@ -1583,9 +1576,9 @@ export default MyComponent;
 ```
 
 7.**`Avoiding Anonymous Functions in JSX`**: Avoid creating new anonymous functions within JSX, as they cause re-renders because function references change on every render.
-```
-jsx
-Copy code
+
+```jsx
+
 // Avoid this
 <button onClick={() => doSomething()}>Click me</button>
 
@@ -1595,9 +1588,8 @@ const handleClick = () => doSomething();
 ```
 
 8.**`Lazy Loading Images`**: Load images only when they enter the viewport using libraries like react-lazyload or the native loading="lazy" attribute for images.
-```
-jsx
-Copy code
+
+```jsx
 <img src="image.jpg" loading="lazy" alt="Lazy loaded image" />
 ```
 

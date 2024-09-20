@@ -1593,16 +1593,12 @@ const handleClick = () => doSomething();
 <img src="image.jpg" loading="lazy" alt="Lazy loaded image" />
 ```
 
-When to Use These Techniques:
-Performance bottlenecks: If you notice performance issues like lagging or slow component rendering, you may want to consider memoization (React.memo(), useMemo(), or useCallback()).
-Large lists or datasets: When rendering large lists, virtualization using react-window or react-virtualized can significantly reduce the number of DOM elements and improve performance.
-Complex state management: In complex applications, useReducer combined with memoization and code splitting can optimize performance and help structure the app efficiently.
-Improving load times: Code splitting and lazy loading can reduce the size of the initial JavaScript bundle, improving the application’s load time and performance.
-Key Takeaways:
-Memoization: Use React.memo(), useMemo(), and useCallback() to prevent unnecessary re-renders and avoid expensive calculations.
-Code Splitting: Implement React.lazy() and Suspense to load components on demand, improving load times.
-Virtualization: Use libraries like react-window to efficiently render long lists.
-Avoid unnecessary re-renders: Techniques like PureComponent, shouldComponentUpdate(), and avoiding anonymous functions in JSX help prevent unnecessary re-renders.
-Lazy loading images: Use lazy loading techniques to improve performance when loading media-heavy applications.
+**When to Use These Techniques**:
+1.**`Performance bottlenecks`**: If you notice performance issues like lagging or slow component rendering, you may want to consider memoization (React.memo(), useMemo(), or useCallback()).
+2.**`Large lists or datasets`**: When rendering large lists, virtualization using react-window or react-virtualized can significantly reduce the number of DOM elements and improve performance.
+3.**`Complex state management`**: In complex applications, useReducer combined with memoization and code splitting can optimize performance and help structure the app efficiently.
+4.**`Improving load times`**: Code splitting and lazy loading can reduce the size of the initial JavaScript bundle, improving the application’s load time and performance.
 
 [Back to top](#table-of-contents)
+
+---

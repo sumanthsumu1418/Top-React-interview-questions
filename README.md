@@ -1453,7 +1453,7 @@ In this example:
 
 ---
 
-### 29. Performance Optimization in React
+### Performance Optimization in React
 
 ### 29. Performance Optimization in React
 

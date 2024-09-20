@@ -228,7 +228,7 @@ In this example:
 ## Higher-Order Components (HOC)
 
 <details>
-<summary> <br> 6.What is a Higher-Order Component (HOC) in React? </br> </summary>
+<summary> <br> 6. What is a Higher-Order Component (HOC) in React? </br> </summary>
 
    ### Higher-Order Components (HOC)
 
@@ -279,7 +279,7 @@ export default withAuth(Dashboard); // Dashboard now requires authentication
 
 ## useCallback vs useMemo
 
- ### 7. What is the difference between `useCallback` and `useMemo`?
+### 7. What is the difference between `useCallback` and `useMemo`?
 ### `useCallback` vs `useMemo` </summary>
 
 In React, `useCallback` and `useMemo` are hooks that optimize the performance of your components by memoizing values and functions. They both help to prevent unnecessary re-renders or recalculations, but they are used in different scenarios.

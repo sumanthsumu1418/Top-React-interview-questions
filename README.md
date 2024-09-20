@@ -333,7 +333,9 @@ function ParentComponent() {
 
 ## Redux
 
-8. **What is Redux, and why is it used?**
+<details>
+---
+<summary> <br> 8. **What is Redux, and why is it used?** </br> </summary>
 
   ### What is Redux, and why is it used?
 
@@ -385,11 +387,16 @@ console.log(store.getState());  // Output: 1
 ```
 [Back to top](#table-of-contents)
 
+</details>
+
 ---
 
 ## Redux Thunk
 
-9. **What is Redux Thunk?**
+<details>
+---
+  
+<summary> <br> 9. **What is Redux Thunk?** </br> </summary>
 
 ### What is Redux Thunk?
 
@@ -453,6 +460,7 @@ store.dispatch(fetchUser());
 ```
 [Back to top](#table-of-contents)
 
+</details>
 ---
 
 ## Class Components vs Functional Components

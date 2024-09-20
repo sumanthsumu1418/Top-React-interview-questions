@@ -392,9 +392,9 @@ console.log(store.getState());  // Output: 1
 ---
 
 ## Redux Thunk
+
 <details>
----
-  
+--- 
 <summary> <br> 9. What is Redux Thunk? </br> </summary>
 
 ### What is Redux Thunk?

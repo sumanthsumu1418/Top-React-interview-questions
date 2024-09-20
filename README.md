@@ -39,7 +39,7 @@ This repository provides a collection of **React Interview Questions** to help d
 ## jsx
 
 <details>
-  
+---
 <summary> <br> 1. What is JSX, and how is it different from HTML? </br> </summary>
 
 <br>
@@ -73,6 +73,7 @@ return <h1>Welcome, {user}!</h1>; // Embeds JavaScript logic into JSX
 ## Virtual DOM
 
 <details>
+---
 <summary> <br> 2. What is the Virtual DOM, and how does React use it? </summary> </br>
 
 The Virtual DOM is a lightweight, in-memory representation of the actual DOM. React uses the Virtual DOM to improve performance and efficiency when rendering UI updates. Instead of directly manipulating the real DOM, React updates the Virtual DOM first. Once the changes are made, React compares (or "diffs") the new Virtual DOM with the previous version, and only the parts that have changed are updated in the real DOM. This process is called **reconciliation**.
@@ -100,7 +101,9 @@ function updateItem(index, newItem) {
 
 ---
 ## Reconciliation in React
+
 <details>
+---
 <summary> <br> 3. What is Reconciliation in React? </br> </summary>
 
 Reconciliation is the process React uses to update the real DOM efficiently. When the state or props of a component change, React creates a new Virtual DOM and compares it with the previous version. This comparison (or "diffing") allows React to determine what has changed. Instead of updating the entire DOM, React only updates the parts that have changed, making the process much faster and more efficient.
@@ -134,6 +137,7 @@ function updateQuantity(index, newQuantity) {
 ## Props vs State
 
 <details>
+---
 <summary> <br> 4.  What are props and state in React? (props vs state) </br> </summary>
 
 **Props** and **state** are two key concepts in React that help manage data in components, but they serve different purposes.
@@ -172,7 +176,8 @@ function Counter({ initialCount }) {  // Props: initialCount
 
 ## useState vs useEffect
 
-<details>  
+<details> 
+---
 <summary> <br> 5. Explain the difference between `useState` and `useEffect` in React. </br> </summary>
 
 In React, `useState` and `useEffect` are two of the most commonly used hooks that help manage component behavior, but they serve very different purposes.
@@ -228,6 +233,7 @@ In this example:
 ## Higher-Order Components (HOC)
 
 <details>
+---
 <summary> <br> 6. What is a Higher-Order Component (HOC) in React? </br> </summary>
 
 ### Higher-Order Components (HOC)

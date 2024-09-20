@@ -525,8 +525,10 @@ class Counter extends Component {
 ---
 
 ## Hooks in React
-
-11. **Can you explain how hooks work in React?**
+<details>
+---
+  
+<summary> <br> 11. Can you explain how hooks work in React ? </summary></br>
 ### Example of React Functional Component with Hooks
 
 This component demonstrates the use of two of the most important hooks in React: **`useState`** and **`useEffect`**. It is designed to show how hooks simplify state management and side effects, while making your code more concise and readable. This example can be an attractive talking point during an interview as it shows proficiency with modern React practices.
@@ -576,11 +578,15 @@ export default ClickCounter;
 ```
 [Back to top](#table-of-contents)
 
+</details>
+
  ---
 
 ## useEffect vs Lifecycle Methods
-
-12. **Why do we need `useEffect`, and how does it differ from lifecycle methods?**
+<details>
+---
+  
+<summary> <br> 12. Why do we need `useEffect`, and how does it differ from lifecycle methods ? </summary></br>
 
    ### Why do we need `useEffect`, and how does it differ from lifecycle methods?
 
@@ -636,11 +642,15 @@ function UserProfile() {
 ```
 [Back to top](#table-of-contents)
 
+</details>
+
 ---
 
 ## Limitations of the Virtual DOM
-
-13. **What are the limitations of React’s Virtual DOM?**
+<details>
+---
+  
+<summary> <br> 13. What are the limitations of React’s Virtual DOM ? </summary></br>
 
   ### What are the limitations of React’s Virtual DOM?
 
@@ -688,11 +698,15 @@ The **Virtual DOM** is one of the key concepts that makes React performant and e
 In summary, while React’s Virtual DOM is a powerful optimization technique, it isn’t perfect. In highly complex or real-time applications, performance can still degrade if the Virtual DOM is overused or mismanaged. Proper optimization techniques, such as memoization and efficient state management, are essential to mitigating these limitations.
 
 [Back to top](#table-of-contents)
+
+</details>
 ---
 
 ## useCallback and Performance
-
-14. **How does `useCallback` help with performance in React?**
+<details>
+---
+  
+<summary> <br> 14. How does `useCallback` help with performance in React? </summary></br>
 
    ### How does `useCallback` help with performance in React?
 
@@ -737,11 +751,15 @@ export default ParentComponent;
 ```
 [Back to top](#table-of-contents)
 
+</details>
 ---
 
 ## useMemo vs useCallback
+<details>
+---
+  
+<summary> <br> 15. When should you use `useMemo` vs `useCallback` ? </summary></br>
 
-15. **When should you use `useMemo` vs `useCallback`?**
 ### When should you use `useMemo` vs `useCallback`?
 
 Both `useMemo` and `useCallback` are React hooks that help optimize performance by **memoizing** values and functions. They serve different purposes and should be used in specific scenarios.
@@ -783,11 +801,14 @@ function ItemList({ items, filterTerm }) {
 ```
 [Back to top](#table-of-contents)
 
+</details>
 ---
 
 ## Redux vs useState
-
-16. **How does Redux differ from React’s built-in state management using `useState`?**
+<details>
+---
+  
+<summary> <br> 16. How does Redux differ from React’s built-in state management using `useState`? </summary></br>
 
    ### How does Redux differ from React’s built-in state management using `useState`?
 
@@ -835,11 +856,14 @@ export default Counter;
 ```
 [Back to top](#table-of-contents)
 
+</details>
 ---
 
 ## Side Effects in React
-
-17. **What are side effects in React, and how do you handle them?**
+<details>
+---
+  
+<summary> <br> 17. What are side effects in React, and how do you handle them? </summary></br>
 
    ### What are side effects in React, and how do you handle them?
 
@@ -866,11 +890,14 @@ useEffect(() => {
 ```
 [Back to top](#table-of-contents)
 
+</details>
 ---
 
 ## Alternatives to Redux
-
-18. ### What are the alternatives to Redux for state management in React?
+<details>
+---
+  
+<summary> <br> 18. What are the alternatives to Redux for state management in React? </summary></br>
 
 While **Redux** is a powerful tool for managing state in React applications, it’s often considered too complex for small to medium-sized apps. Several alternatives can handle state management with less boilerplate and complexity.
 
@@ -948,6 +975,7 @@ While Redux is powerful and widely used, it can be overkill for smaller or simpl
 
 [Back to top](#table-of-contents)
 
+</details>
 ---
 ### Controlled vs Uncontrolled Components
 

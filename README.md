@@ -700,6 +700,7 @@ In summary, while React’s Virtual DOM is a powerful optimization technique, it
 [Back to top](#table-of-contents)
 
 </details>
+
 ---
 
 ## useCallback and Performance
@@ -752,6 +753,7 @@ export default ParentComponent;
 [Back to top](#table-of-contents)
 
 </details>
+
 ---
 
 ## useMemo vs useCallback
@@ -802,6 +804,7 @@ function ItemList({ items, filterTerm }) {
 [Back to top](#table-of-contents)
 
 </details>
+
 ---
 
 ## Redux vs useState
@@ -857,6 +860,7 @@ export default Counter;
 [Back to top](#table-of-contents)
 
 </details>
+
 ---
 
 ## Side Effects in React
@@ -891,9 +895,10 @@ useEffect(() => {
 [Back to top](#table-of-contents)
 
 </details>
+
 ---
 
-## Alternatives to Redux
+### Alternatives to Redux
 <details>
 ---
   
@@ -976,7 +981,9 @@ While Redux is powerful and widely used, it can be overkill for smaller or simpl
 [Back to top](#table-of-contents)
 
 </details>
+
 ---
+
 ### Controlled vs Uncontrolled Components
 
 In React, **controlled components** and **uncontrolled components** are two different ways of handling form inputs.

@@ -133,7 +133,8 @@ function updateQuantity(index, newQuantity) {
 
 ## Props vs State
 
-4. ### What are props and state in React? (props vs state)
+<details>
+<summary> <br> 4.  What are props and state in React? (props vs state) </br> </summary>
 
 **Props** and **state** are two key concepts in React that help manage data in components, but they serve different purposes.
 
@@ -165,11 +166,14 @@ function Counter({ initialCount }) {  // Props: initialCount
 ```
 [Back to top](#table-of-contents)
 
+</details>
+
 ---
 
 ## useState vs useEffect
 
-5. ### Explain the difference between `useState` and `useEffect` in React.
+<details>
+<summary> <br> 5. Explain the difference between `useState` and `useEffect` in React. </br> </summary>
 
 In React, `useState` and `useEffect` are two of the most commonly used hooks that help manage component behavior, but they serve very different purposes.
 
@@ -217,11 +221,14 @@ In this example:
 
 [Back to top](#table-of-contents)
 
+</details>
+
 ---
 
 ## Higher-Order Components (HOC)
 
-6. **What is a Higher-Order Component (HOC) in React?**
+<details>
+<summary> <br>6. **What is a Higher-Order Component (HOC) in React?** </br> </summary>
 
    ### Higher-Order Components (HOC)
 
@@ -264,6 +271,8 @@ const Dashboard = (props) => {
 export default withAuth(Dashboard); // Dashboard now requires authentication
 ```
 [Back to top](#table-of-contents)
+
+</details>
 
 ---
 

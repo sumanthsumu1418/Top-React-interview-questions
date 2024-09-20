@@ -270,6 +270,7 @@ const Dashboard = (props) => {
 
 export default withAuth(Dashboard); // Dashboard now requires authentication
 ```
+
 [Back to top](#table-of-contents)
 
 </details>

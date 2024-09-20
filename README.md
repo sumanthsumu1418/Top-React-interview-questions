@@ -335,7 +335,7 @@ function ParentComponent() {
 
 <details>
 ---
-<summary> <br> 8. **What is Redux, and why is it used?** </br> </summary>
+<summary> <br> 8. What is Redux, and why is it used? </br> </summary>
 
   ### What is Redux, and why is it used?
 
@@ -396,7 +396,7 @@ console.log(store.getState());  // Output: 1
 <details>
 ---
   
-<summary> <br> 9. **What is Redux Thunk?** </br> </summary>
+<summary> <br> 9. What is Redux Thunk? </br> </summary>
 
 ### What is Redux Thunk?
 
@@ -464,8 +464,10 @@ store.dispatch(fetchUser());
 ---
 
 ## Class Components vs Functional Components
-
-10. **What is the difference between class components and functional components in React?**
+<details>
+---
+  
+<summary> <br> 10. What is the difference between class components and functional components in React? </br> </summary>
 ### What is the difference between class components and functional components in React?
 
 In React, components can be written as either **class components** or **functional components**. Both are used to build the UI, but they differ in syntax, features, and how they handle state and lifecycle methods.
@@ -516,6 +518,7 @@ class Counter extends Component {
 }
 ```
 [Back to top](#table-of-contents)
+</details>
 
 ---
 

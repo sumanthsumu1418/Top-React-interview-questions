@@ -1733,9 +1733,10 @@ export default App;
 ---
 
 ## React.createElement vs JSX
-
 <details>
+  
 ---
+
 <summary> <br> 30. What is the difference between React.createElement and JSX? </summary> </br>
 
 ### React.createElement

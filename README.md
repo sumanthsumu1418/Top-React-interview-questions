@@ -1731,3 +1731,65 @@ export default App;
 </details>
 
 ---
+
+## React.createElement vs JSX
+
+<details>
+---
+<summary> <br> 30. What is the difference between React.createElement and JSX? </summary> </br>
+
+### React.createElement
+
+`React.createElement` is the fundamental function that React uses to create elements. It’s how React components are written without using JSX. Each React element is an object that describes a DOM node or a custom component, including the element type, props, and children.
+
+**Example**:
+```jsx
+const element = React.createElement(
+  'h1', 
+  { className: 'greeting' }, 
+  'Hello, world!'
+);
+
+In this example:
+```
+
+'h1' is the type of element (the HTML tag).
+{ className: 'greeting' } is the set of properties (props).
+'Hello, world!' is the content of the element (children).
+JSX (JavaScript XML)
+JSX is a syntax extension for JavaScript that makes it easier to write React components. Under the hood, JSX gets compiled into React.createElement calls by tools like Babel. It allows you to write code that looks more like HTML, which many developers find easier to read and write.
+
+Example:
+
+jsx
+Copy code
+const element = <h1 className="greeting">Hello, world!</h1>;
+In this example:
+
+<h1> represents the same type as the 'h1' tag in React.createElement.
+The className prop is passed just like in the React.createElement example.
+'Hello, world!' is the children.
+Key Differences:
+Syntax: JSX is more readable and looks like HTML, while React.createElement is a function call that requires more boilerplate.
+Compilation: JSX needs to be compiled (usually by Babel) into React.createElement calls before the browser can interpret it.
+Readability: JSX is more concise and readable for those familiar with HTML-like syntax.
+Example:
+
+```jsx
+Copy code
+// JSX code:
+const element = <h1 className="greeting">Hello, world!</h1>;
+
+// Compiles to:
+const element = React.createElement(
+  'h1', 
+  { className: 'greeting' }, 
+  'Hello, world!'
+);
+```
+
+[Back to top](#table-of-contents)
+
+</details> 
+
+---

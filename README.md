@@ -1761,18 +1761,20 @@ JSX is a syntax extension for JavaScript that makes it easier to write React com
 
 Example:
 
-jsx
+```jsx
 Copy code
 const element = <h1 className="greeting">Hello, world!</h1>;
+```
 In this example:
 
 <h1> represents the same type as the 'h1' tag in React.createElement.
-The className prop is passed just like in the React.createElement example.
-'Hello, world!' is the children.
+   The className prop is passed just like in the React.createElement example.
+   'Hello, world!' is the children.
 Key Differences:
-Syntax: JSX is more readable and looks like HTML, while React.createElement is a function call that requires more boilerplate.
-Compilation: JSX needs to be compiled (usually by Babel) into React.createElement calls before the browser can interpret it.
-Readability: JSX is more concise and readable for those familiar with HTML-like syntax.
+   Syntax: JSX is more readable and looks like HTML, while React.createElement is a function call that requires more boilerplate.
+   Compilation: JSX needs to be compiled (usually by Babel) into React.createElement calls before the browser can interpret it.
+   Readability: JSX is more concise and readable for those familiar with HTML-like syntax.
+  
 Example:
 
 ```jsx

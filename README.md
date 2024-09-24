@@ -1753,11 +1753,14 @@ const element = React.createElement(
 In this example:
 ```
 
-'h1' is the type of element (the HTML tag).
-{ className: 'greeting' } is the set of properties (props).
-'Hello, world!' is the content of the element (children).
-JSX (JavaScript XML)
-JSX is a syntax extension for JavaScript that makes it easier to write React components. Under the hood, JSX gets compiled into React.createElement calls by tools like Babel. It allows you to write code that looks more like HTML, which many developers find easier to read and write.
+In this example:
+- `'h1'` is the type of element (the HTML tag).
+- `{ className: 'greeting' }` is the set of properties (props).
+- `'Hello, world!'` is the content of the element (children).
+
+### JSX (JavaScript XML)
+
+JSX is a syntax extension for JavaScript that makes it easier to write React components. Under the hood, JSX gets compiled into `React.createElement` calls by tools like Babel. It allows you to write code that looks more like HTML, which many developers find easier to read and write.
 
 Example:
 
@@ -1765,15 +1768,18 @@ Example:
 Copy code
 const element = <h1 className="greeting">Hello, world!</h1>;
 ```
-In this example:
 
-<h1> represents the same type as the 'h1' tag in React.createElement.
-   The className prop is passed just like in the React.createElement example.
-   'Hello, world!' is the children.
-Key Differences:
-   Syntax: JSX is more readable and looks like HTML, while React.createElement is a function call that requires more boilerplate.
-   Compilation: JSX needs to be compiled (usually by Babel) into React.createElement calls before the browser can interpret it.
-   Readability: JSX is more concise and readable for those familiar with HTML-like syntax.
+In this example:
+- `<h1>` represents the same type as the `'h1'` tag in `React.createElement`.
+- The `className` prop is passed just like in the `React.createElement` example.
+- `'Hello, world!'` is the content (children).
+
+### Key Differences:
+
+- **Syntax**: JSX is more readable and looks like HTML, while `React.createElement` is a function call that requires more boilerplate.
+- **Compilation**: JSX needs to be compiled (usually by Babel) into `React.createElement` calls before the browser can interpret it.
+- **Readability**: JSX is more concise and readable for those familiar with HTML-like syntax.
+
   
 Example:
 

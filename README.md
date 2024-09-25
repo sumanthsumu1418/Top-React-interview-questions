@@ -2078,3 +2078,111 @@ This use of `useEffect` ensures that side effects are managed efficiently, runni
 </details>
 
 ---
+
+## useRef Hook
+
+<details>
+---
+<summary> <br> 33. What is `useRef` and why do we use it? When do we use it? Alternatives (except class components)? </summary> </br>
+
+### What is `useRef`?
+
+`useRef` is a React Hook that allows you to persist values between renders without triggering a re-render when the value changes. It returns a mutable object whose `.current` property can hold any value, such as a DOM element, a value, or a function. The primary use case is accessing and interacting with DOM elements directly or storing mutable values across renders.
+
+#### Key Terms:
+- **Mutable Object**: `useRef` returns an object where you can update the `.current` property without causing re-renders.
+- **Direct DOM Access**: It can be used to directly access DOM elements for imperative operations, like focusing an input field or measuring element size.
+
+---
+
+#### Why is `useRef` Used?
+
+1. **Accessing DOM Elements**: `useRef` allows direct access to DOM elements to perform actions like focusing inputs, scrolling, or manipulating elements that require imperative commands.
+2. **Storing Persistent Values**: `useRef` can store values that persist across renders without causing the component to re-render, which is useful for tracking things like previous state values or timers.
+3. **Avoiding Re-renders**: Unlike `useState`, changing the `.current` property of a `useRef` does not trigger a re-render of the component, making it optimal for certain performance-sensitive tasks.
+
+---
+
+### Example: Focusing an Input with `useRef`
+
+Here is an example of using `useRef` to focus an input field when a button is clicked:
+
+```jsx
+import React, { useRef } from 'react';
+
+function InputFocus() {
+  const inputRef = useRef();
+
+  const focusInput = () => {
+    inputRef.current.focus(); // Access the input DOM element and focus it
+  };
+
+  return (
+    <div>
+      <input ref={inputRef} type="text" placeholder="Focus on me" />
+      <button onClick={focusInput}>Focus Input</button>
+    </div>
+  );
+}
+
+export default InputFocus;
+```
+---
+
+### When Do We Use `useRef`?
+
+`useRef` is commonly used in the following scenarios:
+
+- **Accessing DOM Elements**: When you need to directly interact with DOM elements, such as focusing on an input field, scrolling, or modifying properties.
+  
+- **Persisting Values Between Renders**: To store values that persist across renders without triggering re-renders, such as timers, previous state values, or form inputs that need to remain unchanged.
+  
+- **Avoiding Unnecessary Re-renders**: When you need to store a value that changes frequently but should not cause a re-render each time (e.g., scroll position or form field validation state).
+
+---
+
+### Alternatives to `useRef` (Except Class Components)
+
+For certain use cases, **`useState`** or **`useCallback`** might be better suited depending on the situation.
+
+#### When to Use `useState`:
+- **Triggering Re-renders**: If you need to store a value that should trigger a re-render when updated, then `useState` is a better option.
+
+#### Example:
+
+```jsx
+import React, { useState } from 'react';
+
+function Example() {
+  const [value, setValue] = useState('');
+
+  return (
+    <div>
+      <input value={value} onChange={(e) => setValue(e.target.value)} />
+      <p>Current Value: {value}</p>
+    </div>
+  );
+}
+
+export default Example;
+```
+---
+
+### When to Use `useCallback`:
+
+- **Caching Functions**: If you're dealing with functions that depend on changing props or state but don't want them to be re-created on every render, `useCallback` is a good alternative. It allows you to memoize a function, ensuring the function remains the same between renders unless its dependencies change. This can improve performance by avoiding unnecessary re-creation of functions during re-renders.
+
+---
+
+### Real-Time Experience in a Project
+
+In a real-world project, I used **`useRef`** to persist the scroll position of a chat window. When new messages were loaded, the scroll position needed to remain at the bottom unless the user manually scrolled up to view older messages. `useRef` allowed me to track the scroll position without causing re-renders, ensuring smooth performance even as new messages arrived.
+
+Using `useRef` in this context ensured optimal performance and avoided unnecessary re-renders while efficiently managing the scroll behavior.
+
+[Back to top](#table-of-contents)
+
+</details>
+
+---
+

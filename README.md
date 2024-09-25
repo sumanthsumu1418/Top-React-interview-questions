@@ -35,9 +35,9 @@ This repository provides a collection of **React Interview Questions** to help d
 29. [Performance Optimization in React](#performance-optimization-in-react)
 30. [Lazy Loading and Code Splitting](#lazy-loading-and-code-splitting)
 30. [React.element vs JSX](###React.createElement-vs-JSX) 
-31. [usestate](###useState-Hook)
-32. [useEffect](###useEffect-Hook)
-33. [useRef](###useRef-Hook)
+31. [usestate](#useState-Hook)
+32. [useEffect](#useEffect-Hook)
+33. [useRef](#useRef-Hook)
 
 ---
 ## jsx

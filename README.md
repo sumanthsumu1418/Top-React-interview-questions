@@ -2257,6 +2257,59 @@ Apart from `useCallback`, other strategies can be employed to optimize performan
 It's essential to note that overusing `useCallback` can lead to unnecessary complexity. You should only use it when passing functions to child components or dealing with expensive operations. If the performance benefit is negligible, it's best to avoid using `useCallback`.
 
 ---
+# Example 1: Preventing Unnecessary Re-renders in Child Components
+
+In this example, a parent component passes a function as a prop to a child component. Without `useCallback`, this function would be recreated on every render, causing the child component to re-render even when it's not necessary. By using `useCallback`, the function is only recreated when its dependencies change, leading to better performance.
+
+### Code Example:
+
+```javascript
+import React, { useState, useCallback } from 'react';
+
+// Child component wrapped with React.memo to prevent unnecessary re-renders
+const ChildComponent = React.memo(({ onClick }) => {
+  console.log('Child re-rendered');
+  return <button onClick={onClick}>Click Me</button>;
+});
+
+function ParentComponent() {
+  const [count, setCount] = useState(0);
+
+  // Using useCallback to memoize the function
+  const handleClick = useCallback(() => {
+    console.log('Button clicked');
+  }, []);
+
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <button onClick={() => setCount(count + 1)}>Increment Count</button>
+      <ChildComponent onClick={handleClick} />
+    </div>
+  );
+}
+
+export default ParentComponent;
+```
+### Explanation:
+
+- **Without `useCallback`**: The `handleClick` function would be recreated every time the parent component re-renders. This recreation of the function can cause the `ChildComponent` to re-render unnecessarily, even when its behavior or props haven't changed.
+
+- **With `useCallback`**: By wrapping the `handleClick` function inside `useCallback`, the function is memoized. It will only be recreated if its dependencies (which in this case are none) change. This reduces unnecessary function recreation and improves performance.
+
+- **React.memo**: The `ChildComponent` is wrapped with `React.memo`, a higher-order component that prevents it from re-rendering unless its props change. This ensures that the child component will only re-render when its actual input (props) changes, not when the parent re-renders due to other state updates. Using `React.memo` along with `useCallback` helps to optimize both function memoization and component rendering.
+
+---
+
+### Benefits:
+
+- **Optimizes performance**: Prevents the unnecessary recreation of functions and reduces redundant re-renders of child components, leading to more efficient rendering.
+
+- **Smoother UI updates**: In larger applications or in scenarios involving expensive renders, this optimization can result in smoother UI interactions and more efficient state updates.
+
+- **Better scalability**: As the application grows, using `useCallback` and `React.memo` can ensure that the performance remains efficient even with more complex components and heavier rendering.
+
+
 
 [Back to top](#table-of-contents)
 

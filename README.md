@@ -1744,7 +1744,7 @@ export default App;
 
 ---
 
-## React.createElement vs JSX
+### React.createElement vs JSX
 <details>
   
 ---

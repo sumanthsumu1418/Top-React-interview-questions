@@ -2194,7 +2194,7 @@ Using `useRef` in this context ensured optimal performance and avoided unnecessa
 ### `useCallback` in React
 <details>
 ---
-<summary> <br> ### 34. What is `useCallback`? </summary></br>
+<summary> <br> 34. What is `useCallback`? </summary></br>
   
 `useCallback` is a React Hook used to optimize the performance of functional components by memoizing functions. It ensures that a function is not recreated on every render unless its dependencies change. This is particularly helpful in scenarios where a function is passed as a prop to child components, which could trigger unnecessary re-renders.
 

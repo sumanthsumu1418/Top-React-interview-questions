@@ -38,6 +38,7 @@ This repository provides a collection of **React Interview Questions** to help d
 31. [usestate](#useState-Hook)
 32. [useEffect](#useEffect-Hook)
 33. [useRef](#useRef-Hook)
+34. [useCallback in React](#useCallback-in-React)
 
 ---
 ## jsx
@@ -2183,6 +2184,79 @@ export default Example;
 In a real-world project, I used **`useRef`** to persist the scroll position of a chat window. When new messages were loaded, the scroll position needed to remain at the bottom unless the user manually scrolled up to view older messages. `useRef` allowed me to track the scroll position without causing re-renders, ensuring smooth performance even as new messages arrived.
 
 Using `useRef` in this context ensured optimal performance and avoided unnecessary re-renders while efficiently managing the scroll behavior.
+
+[Back to top](#table-of-contents)
+
+</details>
+
+---
+
+### `useCallback` in React
+<details>
+---
+<summary> <br> ### 34. What is `useCallback`? </summary></br>
+  
+`useCallback` is a React Hook used to optimize the performance of functional components by memoizing functions. It ensures that a function is not recreated on every render unless its dependencies change. This is particularly helpful in scenarios where a function is passed as a prop to child components, which could trigger unnecessary re-renders.
+
+---
+
+## Why is `useCallback` Used?
+
+In React, when a component re-renders, all the functions inside the component are recreated. If these functions are passed down as props to child components, even if the function logic hasn't changed, the child components may also re-render. This can lead to performance issues, especially in large applications or when dealing with expensive computations.
+
+`useCallback` helps in these situations by:
+
+- **Preventing unnecessary re-renders**: Memoizing the function prevents it from being recreated unless necessary.
+- **Optimizing performance**: By avoiding the recreation of functions, it reduces the workload on the browser and increases app efficiency.
+
+---
+
+### Where is `useCallback` Used?
+
+You typically use `useCallback` in situations like:
+
+1. **Passing callback functions as props** to child components: If a parent component has a callback function that is passed to a child, React will recreate that function on every render. Using `useCallback` ensures the function is not recreated unless the dependencies change.
+
+2. **Handling expensive operations**: If a component performs an expensive operation like filtering or data processing, and this operation is triggered inside a function, memoizing the function can prevent it from being unnecessarily re-run on every render.
+
+3. **Dependency management**: When a function depends on certain props or state values, `useCallback` ensures that it only changes when those specific dependencies change.
+
+---
+
+## Real-World Examples
+
+Here are some real-world scenarios where `useCallback` is useful:
+
+### 1. Optimizing Re-Renders in Large Lists
+Imagine an application where a parent component renders a list of items, each represented by a child component. The parent passes a function to each child component for handling some action (like clicking or selecting an item). Without `useCallback`, React will recreate the function every time the parent component re-renders, causing all child components to re-render as well. This can be especially problematic in long lists, as it degrades performance.
+
+By using `useCallback`, you ensure that the function passed to the children remains the same unless its dependencies change, preventing unnecessary child re-renders.
+
+### 2. Preventing Expensive Recalculations
+Suppose you have a component that fetches data and processes it with some complex calculations. If the component renders multiple times, these calculations might run again, even if the inputs haven’t changed. Using `useCallback` to memoize the function that performs the calculations ensures it’s only re-executed when necessary, leading to significant performance gains.
+
+### 3. Event Handlers in Child Components
+In a UI where button clicks or form submissions need to be handled by a parent component, event handler functions are passed down as props to child components. Without `useCallback`, React will recreate the handler function on each render, potentially causing the child to re-render unnecessarily. By memoizing the handler with `useCallback`, you prevent these redundant renders and improve performance.
+
+---
+
+## Alternatives to `useCallback`
+
+Apart from `useCallback`, other strategies can be employed to optimize performance in functional components:
+
+- **useMemo**: Similar to `useCallback`, but instead of memoizing a function, `useMemo` memoizes a computed value. This is helpful when you want to avoid recalculating values unless necessary.
+  
+- **React.memo**: This higher-order component can be used to memoize the entire component, preventing re-renders if its props haven't changed.
+
+- **Avoiding Inline Functions**: Sometimes, simply moving functions outside of the component or defining them at a higher scope (instead of inline) can reduce the number of function re-creations.
+
+---
+
+## When NOT to Use `useCallback`
+
+It's essential to note that overusing `useCallback` can lead to unnecessary complexity. You should only use it when passing functions to child components or dealing with expensive operations. If the performance benefit is negligible, it's best to avoid using `useCallback`.
+
+---
 
 [Back to top](#table-of-contents)
 

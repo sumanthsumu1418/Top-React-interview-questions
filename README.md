@@ -2367,11 +2367,11 @@ Imagine a scenario where you have a component that derives a list of items based
 
 Here are some alternatives to using `useMemo`, besides reverting to class components:
 
-- **useCallback**: If the operation in question involves a function that doesn’t need to be recalculated unless dependencies change, `useCallback` can be used. It memoizes a function rather than a computed value.
+-**useCallback**: If the operation in question involves a function that doesn’t need to be recalculated unless dependencies change, `useCallback` can be used. It memoizes a function rather than a computed value.
 
-- **React.memo**: You can wrap a component with `React.memo` to prevent it from re-rendering unless its props change. This can be used to reduce the performance cost of re-rendering components that rely on unchanged props.
+-**React.memo**: You can wrap a component with `React.memo` to prevent it from re-rendering unless its props change. This can be used to reduce the performance cost of re-rendering components that rely on unchanged props.
 
-- **Avoid Unnecessary Re-Renders**: In some cases, you can avoid the need for `useMemo` by redesigning the component logic so that it doesn’t depend on expensive calculations during each render.
+-**Avoid Unnecessary Re-Renders**: In some cases, you can avoid the need for `useMemo` by redesigning the component logic so that it doesn’t depend on expensive calculations during each render.
 
 ---
 

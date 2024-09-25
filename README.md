@@ -39,7 +39,7 @@ This repository provides a collection of **React Interview Questions** to help d
 32. [useEffect](#useEffect-Hook)
 33. [useRef](#useRef-Hook)
 34. [useCallback in React](#useCallback-in-React)
-35. [wwhat-is-useMemo](#what-is-useMemo)
+35. [what-is-useMemo](#what-is-useMemo)
 
 ---
 ## jsx
@@ -2325,8 +2325,7 @@ export default ParentComponent;
 `useMemo` is a React Hook that helps optimize the performance of functional components by memoizing a computed value. It ensures that a function's return value is not recalculated on every render unless its dependencies have changed. This is particularly useful when the computation is expensive or when you want to avoid unnecessary re-rendering of child components.
 
 ---
-
-## Why is `useMemo` Used?
+### Why is `useMemo` Used?
 
 In React, components can re-render frequently due to state or prop changes. During each render, any calculations or operations inside the component are executed again, even if the results don’t change. For expensive computations or derived data, this can lead to performance issues.
 
@@ -2341,25 +2340,25 @@ In React, components can re-render frequently due to state or prop changes. Duri
 
 `useMemo` is typically used in scenarios such as:
 
-1. **Expensive Calculations**: If a component performs a costly calculation (e.g., processing large datasets or complex mathematical operations), you can use `useMemo` to ensure that the computation only happens when necessary, rather than on every render.
+1.**Expensive Calculations**: If a component performs a costly calculation (e.g., processing large datasets or complex mathematical operations), you can use `useMemo` to ensure that the computation only happens when necessary, rather than on every render.
 
-2. **Filtering or Sorting Data**: When you need to filter or sort a list of data inside a component, the computation can be expensive depending on the size of the list. Using `useMemo` ensures that the filtering or sorting is only recalculated when the relevant data changes.
+2.**Filtering or Sorting Data**: When you need to filter or sort a list of data inside a component, the computation can be expensive depending on the size of the list. Using `useMemo` ensures that the filtering or sorting is only recalculated when the relevant data changes.
 
-3. **Derived State**: Sometimes a component’s state depends on other props or state values. By using `useMemo`, you can ensure that this derived state is only recalculated when its dependencies change, rather than on every render.
+3.**Derived State**: Sometimes a component’s state depends on other props or state values. By using `useMemo`, you can ensure that this derived state is only recalculated when its dependencies change, rather than on every render.
 
-4. **Preventing Re-Renders**: `useMemo` can also be used to avoid unnecessary re-renders of child components when their props rely on computed values. If a computed value is passed to a child component and it doesn’t change, `useMemo` prevents the parent component from recalculating and re-rendering the child.
+4.**Preventing Re-Renders**: `useMemo` can also be used to avoid unnecessary re-renders of child components when their props rely on computed values. If a computed value is passed to a child component and it doesn’t change, `useMemo` prevents the parent component from recalculating and re-rendering the child.
 
 ---
 
 ## Real-World Examples
 
-### 1. Optimizing Expensive Calculations
+### 1 Optimizing Expensive Calculations
 Imagine an analytics dashboard where you need to calculate aggregate statistics (e.g., totals, averages) for a large dataset. Without `useMemo`, every time the component re-renders (due to other state or prop changes), the statistics would be recalculated, even if the data hasn’t changed. Using `useMemo`, the calculation is only performed when the dataset changes, improving the performance of the dashboard.
 
-### 2. Filtering Large Data Sets
+### 2.Filtering Large Data Sets
 Consider an e-commerce application where you have a list of thousands of products and need to filter them based on user input (e.g., categories or price range). The filtering operation can be computationally expensive. By using `useMemo`, the filtered list is only recalculated when the list of products or the filter criteria change, preventing unnecessary recalculations on every render.
 
-### 3. Memoizing Derived Data
+### 3.Memoizing Derived Data
 Imagine a scenario where you have a component that derives a list of items based on some user preferences. These preferences rarely change, but the component re-renders frequently due to other state changes. Using `useMemo`, you can ensure that the derived list is only recalculated when the preferences change, reducing the overall re-rendering cost.
 
 ---

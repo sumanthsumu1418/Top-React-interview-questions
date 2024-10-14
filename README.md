@@ -2380,9 +2380,7 @@ Here are some alternatives to using `useMemo`, besides reverting to class compon
 While `useMemo` can optimize performance, overusing it or using it for lightweight computations can lead to unnecessary complexity in your code. You should only use `useMemo` when there is a clear performance benefit, such as in cases of expensive computations or frequent re-renders.
 
 ---
-**: As the application grows, using `useCallback` and `React.memo` can ensure that the performance remains efficient even with more complex components and heavier rendering.
-
-
+**: As the application grows, using `useCallback` and `React.memo` can ensure that the performance remains efficient even with more complex components and heavier rendering.**
 
 [Back to top](#table-of-contents)
 

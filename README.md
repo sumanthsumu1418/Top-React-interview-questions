@@ -2388,7 +2388,7 @@ While `useMemo` can optimize performance, overusing it or using it for lightweig
 </details>
 
 ---
-# Understanding the Importance of Keys in React Lists
+## Understanding of keys
 <details>
 
 ---

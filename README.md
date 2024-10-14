@@ -41,6 +41,7 @@ This repository provides a collection of **React Interview Questions** to help d
 34. [useCallback in React](#useCallback-in-React)
 35. [what-is-useMemo](#what-is-useMemo)
 36. [understanding-of-keys](#understanding-of-keys)
+37. [How-do-error-boundaries-Differ-from-`try/catch`-in-Javascript](##how-do-error-boundaries-Differ-from-`try/catch`-in-javascript)
 
 ---
 ## jsx

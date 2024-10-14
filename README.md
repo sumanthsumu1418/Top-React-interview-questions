@@ -2320,7 +2320,7 @@ export default ParentComponent;
 <details>
 
 ---
-<summary><br> 35. What is `useMemo`? </br</summary>
+<summary><br> 35. What is `useMemo`? </br></summary>
 
 `useMemo` is a React Hook that helps optimize the performance of functional components by memoizing a computed value. It ensures that a function's return value is not recalculated on every render unless its dependencies have changed. This is particularly useful when the computation is expensive or when you want to avoid unnecessary re-rendering of child components.
 

@@ -2389,8 +2389,10 @@ While `useMemo` can optimize performance, overusing it or using it for lightweig
 
 ---
 # Understanding the Importance of Keys in React Lists
+<details>
 
-## What are Keys in React?
+---
+<summary><br> 36. Understanding of keys </br></summary>
 
 Keys are a special attribute that React uses to uniquely identify each element in a list. When rendering dynamic lists, keys help React optimize the re-rendering process by identifying which items have changed, been added, or removed. Each key should be unique among siblings in the list, typically using a unique identifier such as an ID from your data or a unique value for each item.
 
@@ -2408,10 +2410,6 @@ Keys play a vital role in React's reconciliation process, which determines how t
 ---
 
 ## Problems That Occur When Keys Are Not Used
-<details>
-
----
-<summary><br> 36. Understanding of keys </br></summary>
 
 When keys are not provided in a list, or when non-unique keys are used, several issues can arise:
 

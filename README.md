@@ -2411,7 +2411,7 @@ Keys play a vital role in React's reconciliation process, which determines how t
 <details>
 
 ---
-<summary><br> 35. What is `useMemo`? </br></summary>
+<summary><br> 36. Understanding of keys </br></summary>
 
 When keys are not provided in a list, or when non-unique keys are used, several issues can arise:
 

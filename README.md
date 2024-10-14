@@ -2465,7 +2465,7 @@ In React, keys are critical for ensuring the efficiency and correctness of list 
 <details>
 ---
   
-<summary><br> 36. How do Error Boundaries differ from `try/catch` in JavaScript? </summary>
+<summary><br> 37. How do Error Boundaries differ from `try/catch` in JavaScript? </summary>
 
 In React, **error boundaries** are special components that catch JavaScript errors in their child component tree and display a fallback UI instead of crashing the whole app. On the other hand, `try/catch` is a built-in JavaScript mechanism for handling exceptions in synchronous code. While both handle errors, they do so in different contexts and have specific limitations.
 

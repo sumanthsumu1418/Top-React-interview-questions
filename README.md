@@ -2461,5 +2461,131 @@ In React, keys are critical for ensuring the efficiency and correctness of list 
 </details>
 
 ---
+## How Do Error Boundaries Differ from `try/catch` in JavaScript?
+<details>
+---
+  
+<summary><br> 36. How do Error Boundaries differ from `try/catch` in JavaScript? </summary>
 
+In React, **error boundaries** are special components that catch JavaScript errors in their child component tree and display a fallback UI instead of crashing the whole app. On the other hand, `try/catch` is a built-in JavaScript mechanism for handling exceptions in synchronous code. While both handle errors, they do so in different contexts and have specific limitations.
+
+---
+
+## What are Error Boundaries in React?
+
+Error boundaries are React components that catch errors during the rendering phase, lifecycle methods, or constructors of child components. They cannot catch errors inside event handlers, asynchronous code, or errors outside the component tree (like network requests).
+
+### Key Characteristics of Error Boundaries:
+- **Catches rendering errors**: They catch errors that occur during the rendering process and lifecycle methods within their child component tree.
+- **Fallback UI**: When an error occurs, they render a fallback UI instead of letting the entire app crash.
+- **Implemented in class components**: Error boundaries are implemented in class components using `componentDidCatch()` or `getDerivedStateFromError()`. Functional components cannot use error boundaries directly.
+
+### Example of Error Boundary:
+
+javascript
+```import React, { Component } from 'react';
+
+class ErrorBoundary extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { hasError: false };
+  }
+
+  static getDerivedStateFromError(error) {
+    // Update state to display fallback UI
+    return { hasError: true };
+  }
+
+  componentDidCatch(error, errorInfo) {
+    // Log the error to an error reporting service
+    console.error("Error caught in Error Boundary:", error, errorInfo);
+  }
+
+  render() {
+    if (this.state.hasError) {
+      return <h1>Something went wrong.</h1>; // Fallback UI
+    }
+
+    return this.props.children; 
+  }
+}
+
+export default ErrorBoundary;```
+
+Limitations of Error Boundaries:
+
+Cannot catch errors in event handlers: Errors in event handlers must be handled manually, such as with try/catch.
+Cannot catch async errors: Errors from promises or asynchronous code will not be caught.
+What is try/catch in JavaScript?
+try/catch is a JavaScript mechanism for handling exceptions in synchronous code. It allows you to catch errors, preventing the program from crashing and giving you a way to handle the error gracefully.
+
+Key Characteristics of try/catch:
+
+Catches synchronous errors: It can only catch errors in synchronous code. Asynchronous errors need to be handled with .catch() on promises.
+No direct support for UI updates: It doesn't provide a fallback UI mechanism like React's error boundaries.
+Useful for manual error handling: It is most useful when you need explicit control over error handling in functions, loops, or event handlers.
+
+Example of try/catch:
+
+javascript
+```
+try {
+  const result = riskyOperation(); // Code that might throw an error
+  console.log(result);
+} catch (error) {
+  console.error("An error occurred:", error);
+}```
+
+In this example, if riskyOperation() throws an error, it is caught in the catch block and the rest of the code continues to execute.
+
+Key Differences Between Error Boundaries and try/catch
+Feature	Error Boundaries	try/catch in JavaScript
+Purpose	Catches rendering errors in React components	Handles synchronous errors in general JavaScript code
+Scope of Errors	Catches errors during rendering, lifecycle methods, and constructors of child components	Handles errors in synchronous code only
+Asynchronous Code	Cannot catch errors in event handlers or async code	Does not handle asynchronous errors by default (without .catch() for promises)
+Use Case	For gracefully handling errors in React component trees and displaying fallback UI	For handling exceptions in synchronous code logic
+Works with React Lifecycle	Yes, error boundaries can be used in lifecycle methods	No, try/catch does not interact with React lifecycle
+UI Fallback	Can display a fallback UI when an error occurs	Cannot directly modify UI, only handles error logic
+Limitations of Error Boundaries
+Cannot catch errors in event handlers: If an error occurs in an event handler (e.g., on a button click), error boundaries won’t catch it. You need to handle such errors using try/catch inside the event handler itself.
+
+---
+
+Example of handling errors in an event handler:
+
+javascript
+```
+function handleClick() {
+  try {
+    riskyOperation(); // Code that might throw an error
+  } catch (error) {
+    console.error("Error in event handler:", error);
+  }
+}```
+
+Cannot catch async errors: Error boundaries do not catch errors in asynchronous code, such as promises or setTimeout(). You need to handle these errors with .catch() on promises or within the asynchronous block.
+
+Example of catching async errors:
+
+javascript
+```
+fetchData()
+  .then((response) => {
+    // Handle response
+  })
+  .catch((error) => {
+    console.error("Error fetching data:", error);
+  });```
+Conclusion
+Error boundaries and try/catch serve different purposes in React and JavaScript error handling:
+
+Error boundaries: Are used to catch and handle errors specifically during rendering and lifecycle phases of React components, allowing you to show a fallback UI in case of errors.
+
+try/catch: Is a general JavaScript mechanism for catching synchronous errors in any part of the code. It is often used in event handlers and synchronous logic outside of rendering.
+
+Both are valuable tools in ensuring robust error handling and improving the overall stability of your application.
+---
+Back to top
+
+</details>
 
